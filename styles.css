@@ -70,11 +70,12 @@ div.container-fluid{
 }
 .mainbutton:hover{
     background-color:#7E6363 ;
+    color:white;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0; /* remove the gap so it doesn't close */
+    /* display: block;
+    margin-top: 0; remove the gap so it doesn't close */
 }
 
 .navbar-nav li{
@@ -132,7 +133,7 @@ div.container-fluid{
     /* gap: */
   }
 .feature-block{
-    background-color:#f8f9fa;
+    /* background-color:#f8f9fa; */
     /* color:#473C38; */
     border-radius: 5%;
     padding:5%;
@@ -236,15 +237,17 @@ div.container-fluid{
 }
 
 .album-title-ballina{
-    color:#473C38;
+    /* color:#473C38; */
+    
     padding-left:1.4%;
     font-family: "Alegreya SC", serif;
     font-weight: 600;
     font-style: normal;
     font-size:2rem;
     padding-top:3%;
-    display:block;
-    width:100%;
+    display:flex;
+    /* width:100%; */
+    justify-content: center;
 }
 
 .album-see-more{
@@ -255,8 +258,11 @@ div.container-fluid{
     display:flex;
     justify-content: center;
 }
+
+
 .btn-seemore:hover{
-    color:#473C38;
+    /* color:#473C38; */
+    color:white;
 }
 .album-row{
     padding-top:2%;
@@ -299,6 +305,7 @@ div.container-fluid{
     font-weight:600;
     color:#000000A6;
     border-radius:25px;
+    font-size:1rem;
     display:flex;
     justify-content: center;
     /* background-color: #B3A398; */
