@@ -110,15 +110,23 @@ div.container-fluid{
     color:#fff;
     position:absolute;
     z-index:12;
-    top:50%;
+    top:35%;
     left:0;
+    display:flex;
+    justify-content: center;
     width:100%;
+    
     text-align:center;
     /* font-family: "Playfair Display SC", serif;
     font-weight: 700;
     font-style: normal; */
     font-family: "Alegreya SC", serif;
     font-weight: 400;
+  }
+  .overlay-h1{
+    width:50%;
+    align-items: center;
+    font-size: 3rem;
   }
 
 .seksioni-2{
