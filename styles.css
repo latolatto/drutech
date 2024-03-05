@@ -7,13 +7,15 @@ body{
     /* display:grid;
     grid-template-rows: 5fr 10fr 1fr; */
     height:100vh;
-    display: grid;
-    grid-template-rows: 4fr 8fr 0.5fr;
+    /* display: grid;
+    grid-template-rows: 4fr 8fr 0.5fr; */
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap:2rem;
 }
+
 
 .grid1{
     display: flex;
@@ -23,6 +25,16 @@ body{
     /* gap:1rem; */
     /* height:fit-content;
     margin-bottom: 10%; */
+}
+
+.grid1-catalogue{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap:1rem; */
+    margin-bottom: 10%;
+    /* padding-bottom: 10%; */
 }
 
 .menuja{
@@ -130,13 +142,23 @@ div.container-fluid{
   }
 
 .seksioni-2{
-    padding-top: 8%;
+    padding-top: 2%;
     margin-top:5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
+  .seksioni-2-catalogue{
+    padding-top: 20%;
+    margin-top:20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .features-row {
     display:flex;
     flex-direction: row;
@@ -243,7 +265,11 @@ div.container-fluid{
   .browse-catg{
     padding-top:2%;
     padding-bottom:5%;
+  }
 
+  .browse-catg-catalogue{
+    padding-top:10%;
+    /* padding-bottom:10%; */
   }
   .album-ballina{
     /* border-radius: 2%;
@@ -275,6 +301,20 @@ div.container-fluid{
     justify-content: center;
 }
 
+.album-title-ballina-catalogue{
+    /* color:#473C38; */
+    padding-bottom: 2%;
+    padding-left:1.4%;
+    font-family: "Alegreya SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size:2rem;
+    padding-top:10%;
+    margin-top:10%;
+    display:flex;
+    /* width:100%; */
+    justify-content: center;
+}
 .album-see-more{
     color:#473C38;
     /* text-align:right !important; */
@@ -300,6 +340,16 @@ div.container-fluid{
  
 }
 
+.album-row-catalogue{
+    padding-top: 5%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap:2rem;
+    column-gap: 1rem;
+    justify-content:space-around;
+    padding-bottom: 1%;
+}
 .album-row:hover{
     text-decoration-color:black;
 }
@@ -339,6 +389,20 @@ div.container-fluid{
     outline: 0;
     border-color:#00000000;
 }
+
+.page-link{
+    /* border:0; */
+    font-size: 0.8rem;
+    /* color:black; */
+}
+
+.pg-previous{
+    border:0;
+}
+
+.pg-next{
+    border:0;
+}
 footer{
     margin-bottom:0;
     padding-bottom: 0;
@@ -350,7 +414,7 @@ footer{
 }
 
 .grid3{
-    width:90%;
+    width:100%;
     margin-bottom:0;
     padding-bottom:0;
 }
@@ -360,4 +424,15 @@ footer{
     margin-top:15%;
     position: relative;
     float: left;
+}
+
+
+.bottom-footer{
+    position: absolute;
+    /* bottom: 0; */
+    margin-bottom: 0;
+    padding-bottom: 0;
+    justify-self: end;
+    align-self: flex-end;
+    /* bottom:5%; */
 }

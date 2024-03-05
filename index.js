@@ -6,9 +6,6 @@ document.getElementById("myButton").onclick = function () {
   location.href = "./place-order.html";
 };
 
-$(".album-see-more").on("click",function(){
-  location.href = "./catalogue.html";
-})
 
 $(window).on('scroll', function(e) {
   if ($(window).scrollTop() >= ($(".counter").offset().top - ($(window).height()))) {
@@ -34,3 +31,16 @@ $(window).on('scroll', function(e) {
     }
   }
 });
+
+$(".album-see-more").on("click",function(){
+  location.href = "./catalogue.html";
+})
+
+
+$(function() {
+  $('.pop').on('click', function() {
+    $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+    $('#imagemodal').modal('show');   
+  });		
+});
+
