@@ -228,7 +228,7 @@
                   </div>
                 </div>
               </div>
-              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog  ">
                   <div class="modal-content">    
                     <div class="modal-header">
@@ -240,7 +240,30 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"><span id="itemName"></span></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body row">
+                            <!-- First column with image -->
+                            <div class="col-md-6 img-container"  > 
+                                <img src="" class="imagepreview" style="width: 100%;" >
+                                <div class="magnifier" id="magnifier"></div>
+                            </div>
+                            <!-- Second column with description and order button -->
+                            <div class="col-md-6">
+                                <h6>Detailed Description:</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies purus ut felis convallis, sit amet suscipit urna varius.</p>
+                                <button class="btn btn-primary">Place Order Request</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
               <span class="album-see-more"> <button  class="album-see-more btn-seemore btn me-2 btn-sm btn-outline-secondary "  type="button">See more</button></span>
         </div>
       </div>
@@ -262,15 +285,55 @@
          </ul>
        </footer>
       </div>
+    </div>  
      <script>document.getElementById("year").innerHTML = new Date().getFullYear();</script>
-   </div>
-   
+     <script>
+     const container = document.querySelector('.img-container');
+const image = document.querySelector('.imagepreview');
+const magnifier = document.getElementById('magnifier');
+
+container.addEventListener('mousemove', e => {
+    const { left, top, width, height } = container.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+
+    // Calculate the percentage position of the mouse relative to the container size
+    const percentX = (x / width) * 100;
+    const percentY = (y / height) * 100;
+
+    // Calculate the background position based on percentage
+    const bgPosX = (percentX * 2) - 100;
+    const bgPosY = (percentY * 2) - 100;
+
+    // Adjust the position of the magnifier
+    const magnifierX = x - (magnifier.offsetWidth / 2);
+    const magnifierY = y - (magnifier.offsetHeight / 2);
+
+    // Ensure the magnifier stays within the bounds of the container
+    const maxX = width - magnifier.offsetWidth;
+    const maxY = height - magnifier.offsetHeight;
+    const adjustedX = Math.min(Math.max(0, magnifierX), maxX);
+    const adjustedY = Math.min(Math.max(0, magnifierY), maxY);
+
+    // Set the position and background position of the magnifier
+    magnifier.style.backgroundImage = `url(${image.src})`;
+    magnifier.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
+    magnifier.style.display = 'block';
+    magnifier.style.left = `${adjustedX}px`;
+    magnifier.style.top = `${adjustedY}px`;
+});
+
+container.addEventListener('mouseleave', () => {
+    magnifier.style.display = 'none';
+});
+
+  </script>
+  
    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
    <script src="./index.js"></script>
   </body>

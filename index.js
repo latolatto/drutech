@@ -63,39 +63,3 @@ $('.pop').on('click', function () {
 });
 
 
-$('#searchForm').submit(function (e) {
-  e.preventDefault(); // Prevent the default form submission
-
-  // Get the search term from the input field
-  var searchTerm = $('#exampleDataList').val().trim().toLowerCase();
-
-  // Remove any existing search result classes
-  $('.album-row-catalogue .card').removeClass('search-result');
-
-  // Perform the search and mark matching cards
-  if (searchTerm !== '') {
-    $('.album-row-catalogue .card').each(function () {
-      var productName = $(this).find('.card-body').text().toLowerCase();
-
-      // Check if the product matches the search term
-      if (productName.includes(searchTerm)) {
-        $(this).addClass('search-result');
-      }
-    });
-  }
-
-  // Show all cards if search term is empty or whitespace
-  if (!searchTerm) {
-    $('.album-row-catalogue .card').addClass('search-result');
-  }
-
-  // Hide non-matching cards
-  $('.album-row-catalogue .card').each(function () {
-    if (!$(this).hasClass('search-result')) {
-      $(this).hide();
-    } else {
-      $(this).show(); // Ensure matching cards are visible
-    }
-  });
-});
-

@@ -6,7 +6,7 @@ body{
 .grid-container{
     /* display:grid;
     grid-template-rows: 5fr 10fr 1fr; */
-    height:100vh;
+    /* height:100vh; */
     /* display: grid;
     grid-template-rows: 4fr 8fr 0.5fr; */
     display: flex;
@@ -25,16 +25,6 @@ body{
     /* gap:1rem; */
     /* height:fit-content;
     margin-bottom: 10%; */
-}
-
-.grid1-catalogue{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* gap:1rem; */
-    margin-bottom: 10%;
-    /* padding-bottom: 10%; */
 }
 
 div.container-fluid.justify-content-md-center{
@@ -56,7 +46,18 @@ div.container-fluid.justify-content-md-center{
     background-color:white !important;
 }
 
+#menuja-catg{
+  background-color: rgba(255, 255, 255, 0.425);
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  gap:3.5rem;
+  justify-content: center;
+} 
 
+#menuja-catg:hover{
+  background-color:white !important;
+}
 .nav-logo{
     display:flex;
     justify-content: space-around;
@@ -144,7 +145,11 @@ div.container-fluid.justify-content-md-center{
     align-items: center;
     font-size: 3rem;
   }
-
+  .grid{
+    display:grid;
+    grid-template-rows: 4fr 0.2fr 0.2fr;
+    gap:2rem;
+}
 .seksioni-2{
     padding-top: 2%;
     margin-top:5%;
@@ -155,12 +160,12 @@ div.container-fluid.justify-content-md-center{
   }
 
   .seksioni-2-catalogue{
-    padding-top: 20%;
-    margin-top:20%;
-    display: flex;
+    /* padding-top: 10%; */
+    margin-top: 8%;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
   }
   .seksioni-2-place-order{
     /* padding-top: 2%; */
@@ -287,16 +292,22 @@ div.container-fluid.justify-content-md-center{
   }
 
 
+  #root {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
   .browse-catg{
-    padding-top:2%;
-    padding-bottom:5%;
+    padding-top:3%;
+    padding-bottom:3%;
   }
 
   .browse-catg-catalogue{
     padding-top:10%;
+    /* margin-top: 10%; */
     /* padding-bottom:10%; */
   }
-
 
   .album-ballina{
     /* border-radius: 2%;
@@ -327,9 +338,11 @@ div.container-fluid.justify-content-md-center{
     /* width:100%; */
     justify-content: center;
 }
-
+.searchBar{
+  margin-bottom:5%;
+}
 .album-title-ballina-catalogue{
-    /* color:#473C38; */
+    /* color:#473C38;
     padding-bottom: 2%;
     padding-left:1.4%;
     font-family: "Alegreya SC", serif;
@@ -338,22 +351,13 @@ div.container-fluid.justify-content-md-center{
     font-size:2rem;
     /* padding-top:10%;
     margin-top:10%; */
-    display:flex;
-    flex-direction: column;
+    /* display:flex;
+    flex-direction: column; */
     /* width:100%; */
-    justify-content: center;
-    text-align: center;
+    /* justify-content: center;
+    text-align: center; */ */
 }
 
-.form-control {
-  /* max-width: 400px;
-  margin: 20px auto; */
-}
-
-.card {
-  display: block; /* Ensure cards are displayed initially */
-  margin-bottom: 10px;
-}
 .album-see-more{
     color:#473C38;
     /* text-align:right !important; */
@@ -419,6 +423,25 @@ div.container-fluid.justify-content-md-center{
   a.card-text.pop{
     text-decoration: none !important;
   }
+  .img-container {
+    position: relative;
+    overflow: hidden;
+    padding-right:0;
+    padding-left:0;
+}
+.imagepreview {
+    width: 100%;
+    height: 100%;
+}
+.magnifier {
+    position: absolute;
+    border: 2px solid black; /* Add border */
+    border-radius: 50%; /* Round shape */
+    width: 46%; /* Adjust the size of the magnifier */
+    height: 46%; /* Adjust the size of the magnifier */
+     /* Adjust according to the size of the image */
+    display: none;
+}
 
   .btn-seemore{
     border-width:0.15rem;
@@ -511,6 +534,8 @@ footer{
 .socials{
   justify-content: end;
 }
+
+
 
 /*portrait phone screen*/
 @media(min-width: 280px) and (max-width: 480px){
@@ -731,8 +756,6 @@ footer{
   width:100%;
   justify-content: center;
 }
-
-
 
 
 }
