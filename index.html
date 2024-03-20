@@ -15,6 +15,7 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
   </head>
   <body>
@@ -56,15 +57,34 @@
                   <li class="nav-item " >
                     <a class="act-link nav-link" href="./contact.html"id="nav-item">Contact</a>
                   </li>
-                  <li>
+                  <!-- <li>
                    <button class="btn me-2 mainbutton" id="myButton" type="button">Place an order</button>
-                  </li> 
+                  </li>  -->
                 </ul>
               </div>
             </div>
-          </nav> 
+          </nav>  
+          <a href="#" id="cartIcon" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+            </svg>
+            <span class="badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" id="cartItemCount">0</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="cartIcon">
+             <a class="dropdown-item" href="cart.html">View Cart</a>
+             <a class="dropdown-item" href="checkout.html">Proceed to Checkout</a>
         </div>
-        <div class="overlay"><h1 class="overlay-h1">Woodcraft Artistry - Handcrafted Excellence and Unique Bespoke Sculpted Pieces</h1></div>
+          <!-- <a href="#" id="cartIcon" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+             <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+            </svg>
+            <span class="badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" id="cartItemCount">0</span>
+        </a> -->
+        </div>
+        <div class="overlay">
+          <h1 class="overlay-h1"> Handcrafted Excellence and Unique Bespoke Sculpted Pieces</h1>
+          <button class="btn me-2 mainbutton" id="myButton order-mainbutton" type="button">Place an order</button>
+        </div>
          <div class=" karuseli sticky-top" style="z-index: -2;" >
            <div id="carouselExampleSlidesOnly " class="carousel slide carousel-fade" data-bs-ride="carousel">
              <div class="carousel-inner">
@@ -164,83 +184,14 @@
               </div>
           </div>
         </div>      
-        <div class="browse-catg " >
-            <span class="album-title-ballina border-top justify-content-center">BROWSE OUR BEST SELLING PIECES</span>
-              <div class="album-row ">
-                <div class="col-6-sm  ballina-col">
-                  <div class="card ">
-                    <a class="card-text pop" href="#" type=""  data-bs-toggle="modal" data-bs-target="#myModal" data-item-name="Item 1">
-                     <img class="album-img" src="./assets/ballina-catalog/1.jpg" alt="pieces">
-                     <div class="card-body" style="text-decoration: none;color:black;">
-                       Item 1
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-6-sm   ballina-col">
-                  <div class="card ">
-                    <a class="card-text pop" href="#" type=""  data-bs-toggle="modal" data-bs-target="#myModal" data-item-name="Item 2">
-                     <img class="album-img" src="./assets/ballina-catalog/2.jpg" alt="pieces">
-                     <div class="card-body"  style="text-decoration: none;color:black;">
-                       Item 2
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-6-sm   ballina-col">
-                  <div class="card ">
-                    <a class="card-text pop" href="#" type=""  data-bs-toggle="modal" data-bs-target="#myModal" data-item-name="Item 3">
-                     <img class="album-img" src="./assets/ballina-catalog/3.jpg" alt="pieces">
-                     <div class="card-body"  style="text-decoration: none;color:black;">
-                       Item 3
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-6-sm   ballina-col">
-                  <div class="card ">
-                    <a class="card-text pop" href="#" type=""  data-bs-toggle="modal" data-bs-target="#myModal" data-item-name="Item 4">
-                     <img class="album-img" src="./assets/ballina-catalog/4.jpg" alt="pieces">
-                     <div class="card-body"  style="text-decoration: none;color:black;">
-                       Item 4
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-6-sm   ballina-col">
-                  <div class="card ">
-                    <a class="card-text pop" href="#" type=""  data-bs-toggle="modal" data-bs-target="#myModal" data-item-name="Item 5">
-                     <img class="album-img" src="./assets/ballina-catalog/5.jpg" alt="pieces">
-                     <div class="card-body"  style="text-decoration: none;color:black;">
-                       Item 5
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class=" col-6-sm  ballina-col">
-                  <div class="card ">
-                    <a class="card-text pop" href="#" type=""  data-bs-toggle="modal" data-bs-target="#myModal" data-item-name="Item 6">
-                     <img class="album-img" src="./assets/ballina-catalog/6.jpg" alt="pieces">
-                     <div class="card-body"  style="text-decoration: none;color:black;">
-                       Item 6
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog  ">
-                  <div class="modal-content">    
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel"><span id="itemName"></span></h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>          
-                    <div class="modal-body">
-                      <img src="" class="imagepreview" style="width: 100%;" >
-                    </div>
-                  </div>
-                </div>
-              </div> -->
+        <div class="browse-catg" >
+            <div class="data">
+               <span class="album-title-ballina  border-top justify-content-center">BROWSE OUR BEST SELLING PIECES</span>
+            </div>
+            <div class="body">
+                <div id="root"></div>
+            </div>
+         </div>
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -250,19 +201,25 @@
                         </div>
                         <div class="modal-body row">
                             <!-- First column with image -->
-                            <div class="col-md-6 img-container"  > 
-                                <img src="" class="imagepreview" style="width: 100%;" >
+                            <div class="col-md-6 img-container">
+                                <img src="" class="imagepreview " style="width: 100%;" >
                                 <div class="magnifier" id="magnifier"></div>
                             </div>
                             <!-- Second column with description and order button -->
-                            <div class="col-md-6">
-                                <h6>Detailed Description:</h6>
+                            <div class="col-md-6 right-column">
+                                <h6>Product Description:</h6>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies purus ut felis convallis, sit amet suscipit urna varius.</p>
-                                <button class="btn btn-primary">Place Order Request</button>
+                                <div class="cart-div">
+                                  <input type="number" id="quantityInput" min="1" value="1" class="form-control mr-2">
+                                  <button class="btn btn-warning order-request-btn" >Add to Cart</button>
+                                </div>
+                                <span class="prod-disclaimer">*This website does not include online payment (yet)! <br>Instead, it sends us an order request that you made including your contact details, which we will use to reach out to you.</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+          </div>
             </div>
               <span class="album-see-more"> <button  class="album-see-more btn-seemore btn me-2 btn-sm btn-outline-secondary "  type="button">See more</button></span>
         </div>
@@ -286,53 +243,244 @@
        </footer>
       </div>
     </div>  
-     <script>document.getElementById("year").innerHTML = new Date().getFullYear();</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
      <script>
-     const container = document.querySelector('.img-container');
+
+      $('.dropdown-toggle').dropdown();
+
+
+
+
+ const container = document.querySelector('.img-container');
 const image = document.querySelector('.imagepreview');
 const magnifier = document.getElementById('magnifier');
+const magnification = 1.2; // Adjust the magnification factor (lower value for less zoom)
+const magnifierSize = 200; // Adjust the size of the magnifier
+
+// Create a canvas element for drawing the zoomed area
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = magnifierSize;
+canvas.height = magnifierSize;
+magnifier.appendChild(canvas);
 
 container.addEventListener('mousemove', e => {
     const { left, top, width, height } = container.getBoundingClientRect();
     const x = e.clientX - left;
     const y = e.clientY - top;
 
-    // Calculate the percentage position of the mouse relative to the container size
-    const percentX = (x / width) * 100;
-    const percentY = (y / height) * 100;
+    const ratioX = image.naturalWidth / width;
+    const ratioY = image.naturalHeight / height;
 
-    // Calculate the background position based on percentage
-    const bgPosX = (percentX * 2) - 100;
-    const bgPosY = (percentY * 2) - 100;
+    const imageX = Math.round(x * ratioX);
+    const imageY = Math.round(y * ratioY);
 
-    // Adjust the position of the magnifier
-    const magnifierX = x - (magnifier.offsetWidth / 2);
-    const magnifierY = y - (magnifier.offsetHeight / 2);
+    const magnifierWidth = magnifier.offsetWidth;
+    const magnifierHeight = magnifier.offsetHeight;
 
-    // Ensure the magnifier stays within the bounds of the container
-    const maxX = width - magnifier.offsetWidth;
-    const maxY = height - magnifier.offsetHeight;
-    const adjustedX = Math.min(Math.max(0, magnifierX), maxX);
-    const adjustedY = Math.min(Math.max(0, magnifierY), maxY);
+    const offsetX = magnifierWidth / 2;
+    const offsetY = magnifierHeight / 2;
 
-    // Set the position and background position of the magnifier
-    magnifier.style.backgroundImage = `url(${image.src})`;
-    magnifier.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
+    // Clear previous content on the canvas
+    ctx.clearRect(0, 0, magnifierSize, magnifierSize);
+
+    // Draw the zoomed area of the image on the canvas
+    ctx.drawImage(
+        image,
+        imageX - magnifierSize / (2 * magnification),
+        imageY - magnifierSize / (2 * magnification),
+        magnifierSize / magnification,
+        magnifierSize / magnification,
+        0,
+        0,
+        magnifierSize,
+        magnifierSize
+    );
+
     magnifier.style.display = 'block';
-    magnifier.style.left = `${adjustedX}px`;
-    magnifier.style.top = `${adjustedY}px`;
+    magnifier.style.left = `${x - offsetX}px`;
+    magnifier.style.top = `${y - offsetY}px`;
 });
 
 container.addEventListener('mouseleave', () => {
     magnifier.style.display = 'none';
 });
 
-  </script>
-  
-   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+// Make the magnifier circular
+magnifier.style.borderRadius = '50%';
+magnifier.style.overflow = 'hidden';
+
+
+const product = [
+    {
+        id: 0,
+        image: './assets/ballina-catalog/1.jpg',
+        title: 'Z Flip Foldable Mobile',
+    },
+    {
+        id: 1,
+        image: './assets/ballina-catalog/2.jpg',
+        title: 'Air Pods Pro',
+    },
+    {
+        id: 2,
+        image: './assets/ballina-catalog/3.jpg',
+        title: '250D DSLR item',
+    },
+    {
+        id: 3,
+        image: './assets/ballina-catalog/4.jpg',
+        title: 'Headphones',
+    },
+    {
+        id: 4,
+        image: './assets/ballina-catalog/5.jpg',
+        title: 'Audio item',
+    },
+    {
+        id: 5,
+        image: './assets/ballina-catalog/6.jpg',
+        title: 'Smart Watch',
+    },
+];
+
+// Function to display products
+const displayItem = (items) => {
+    const root = document.getElementById('root');
+    root.innerHTML = ''; // Clear existing content
+    items.forEach((item) => {
+        const card = document.createElement('div');
+        card.classList.add('col-6-sm', 'ballina-col');
+        card.innerHTML = `
+            <div class="card">
+                <a class="card-text pop" href="#" type="" data-bs-toggle="modal" data-bs-target="#myModal${item.id}" data-item-id="${item.id}">
+                    <img class="album-img" src="${item.image}" alt="pieces">
+                    <div class="card-body" style="text-decoration: none;color:black;">
+                        ${item.title}
+                    </div>
+                </a>
+            </div>`;
+        root.appendChild(card);
+
+        // Attach event listener to each card
+        card.addEventListener('click', () => {
+            const selectedItem = product.find(productItem => productItem.id === item.id);
+            if (selectedItem) {
+                // Populate modal with product data
+                document.getElementById("exampleModalLabel").textContent = selectedItem.title;
+                document.querySelector(".imagepreview").setAttribute("src", selectedItem.image);
+                $('#myModal').modal('show'); // Show the modal
+            }
+        });
+    });
+};
+
+// Initial display of all products
+displayItem(product);
+
+
+
+// // Initialize cart array to store added items
+// let cart = [];
+
+// // Add event listener to the "Add to Cart" buttons
+// const addToCartButtons = document.querySelectorAll('.order-request-btn');
+// addToCartButtons.forEach(button => {
+//     button.addEventListener('click', addToCartClicked);
+// });
+
+// // Load cart data from localStorage when the page loads
+// document.addEventListener('DOMContentLoaded', () => {
+//     const savedCart = localStorage.getItem('cart');
+//     if (savedCart) {
+//         cart = JSON.parse(savedCart);
+//         updateCartIcon(); // Update the cart icon when loading the saved cart data
+//     }
+// });
+
+// // Function to handle the "Add to Cart" button click
+// function addToCartClicked(event) {
+//     // Identify the product
+//     const button = event.target;
+//     const productContainer = button.closest('.modal'); // Assuming the modal is a parent element
+//     const title = productContainer.querySelector('.modal-title').textContent;
+//     const imageSrc = productContainer.querySelector('.imagepreview').getAttribute('src');
+
+//     // Retrieve quantity
+//     const quantityInput = productContainer.querySelector('#quantityInput');
+//     const quantity = parseInt(quantityInput.value);
+
+//     // Store product in cart
+//     addToCart(title, imageSrc, quantity);
+
+//     // Reset quantity input to 1
+//     quantityInput.value = 1;
+
+//     // Update cart icon
+//     updateCartIcon();
+
+//     // Save cart details to local storage
+//     saveCartToLocalStorage();
+// }
+
+// // Function to add a product to the cart
+// function addToCart(title, imageSrc, quantity) {
+//     // Example: Store product in an object
+//     const product = { title: title, image: imageSrc, quantity: quantity };
+//     // Push the product into the cart array
+//     cart.push(product);
+// }
+
+// // Function to update the cart icon
+// function updateCartIcon() {
+//     // Get the cart icon element
+//     const cartIcon = document.getElementById('cartIcon');
+//     // Update the cart item count
+//     const cartItemCount = document.getElementById('cartItemCount');
+//     cartItemCount.textContent = getTotalItemCount(); // You need to implement this function
+// }
+
+// // Function to calculate the total number of items in the cart
+// function getTotalItemCount() {
+//     let totalCount = 0;
+//     // Iterate through the cart array and sum up the quantities
+//     cart.forEach(product => {
+//         totalCount += product.quantity;
+//     });
+//     return totalCount;
+// }
+
+// // Function to save cart details to local storage
+// function saveCartToLocalStorage() {
+//     localStorage.setItem('cart', JSON.stringify(cart));
+// }
+
+// // Add an event listener for when the DOM content is loaded
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Retrieve cart data from localStorage
+//     const storedCart = JSON.parse(localStorage.getItem('cart'));
+//     if (storedCart && storedCart.length > 0) {
+//         // If there is stored cart data, update the cart count accordingly
+//         cart = storedCart;
+//         updateCartIcon();
+//     }
+//     // Show the cart count after updating it
+//     document.getElementById('cartItemCount').style.display = 'inline';
+// });
+
+// // Call updateCartIcon when the page loads to initially set the cart count
+// document.addEventListener('DOMContentLoaded', function() {
+//     updateCartIcon();
+// });
+
+
+</script>
+
    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
    <script src="./index.js"></script>
