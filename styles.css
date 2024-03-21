@@ -57,7 +57,7 @@ div.container-fluid.justify-content-md-center{
     flex-direction: row;
     gap:3.5rem ;
     font-size:1rem;
-    font-weight:650;
+    font-weight:600;
 
 }
 
@@ -87,7 +87,18 @@ div.container-fluid.justify-content-md-center{
 }
 
 
+.email{
+  font-size:1rem;
+  font-weight:600;
+  color: #000000A6 !important;
+  text-decoration: none;
+}
 
+.email:hover{
+  color:black;
+  text-decoration: underline;
+  text-decoration-color: black;
+}
 #cartIcon {
   color: #000000A6; /* Change the color of the cart icon */
   text-decoration: none; /* Remove default underline */
@@ -608,7 +619,9 @@ footer{
     height:10%;
     width:10%;
 }
-
+.support-li{
+  margin-left: 5%;
+}
 
 .bottom-footer{
     position: absolute;
