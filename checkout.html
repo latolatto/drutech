@@ -38,16 +38,22 @@
             display:flex;
             justify-content: center;
             width:100%;
+            grid-column: span 3;
         }
         .column{
             display:grid;
-            grid-template-columns: 8fr 0.5fr  2fr;
+            grid-template-columns: 8fr 0.2fr  3fr;
             width:100% !important;
-            gap:4rem;
+            gap:2rem;
             justify-content: center;
             margin-bottom:5%;
         }
-
+#result{
+    display:flex;
+            justify-content: center;
+            width:100%;
+            grid-column: span 3;
+}
 
         .prod-disclaimer-check{
             padding-top:10%;
@@ -57,7 +63,51 @@
              width: 100%;
              margin-top: 3%;
         }
+        #cartItems {
+            font-family: "Montserrat", sans-serif;
+            /* display:flex; */
+            /* flex-direction: column; */
+            width:100%;
+            margin: 0 auto;
+            flex-direction: row;
+            gap:2rem;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #cartHeader {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            gap:1rem;
+        }
+        .item {
+            margin-bottom: 20px;
+            display:flex;
+            flex-direction: row;
+            gap:1rem;
+            align-items: center;
+            font-size: 0.8rem;
 
+        }
+        .item-title {
+            font-size: 0.8rem;
+            /* font-weight: bold; */
+        }
+        .item-quantity {
+            margin-top: 5px;
+            color: #666;
+        }
+        .item-image {
+            /* display: block; */
+            margin-top: 10px;
+            width:15%;
+            height:15%;
+        }
     
     </style>
   </head>
@@ -90,7 +140,7 @@
               </div>
             </nav>  
             <li  class="email" style="list-style: none; justify-self: center;align-self: center;"><a class="email" href = "mailto: toshi.lazime@gmail.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000A6" class="bi bi-envelope-at" viewBox="0 0 16 16"> <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/> <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/></svg> toshi.lazime@gmail.com</a> </li>
-            <a href="#" id="cartIcon" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" style="display:none;"id="cartIcon" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
                   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
               </svg>
@@ -118,62 +168,42 @@
                 </div>
                 <div class="">
                   <h4 class="mb-3"></h4>
-                  <form class="needs-validation column" novalidate="">
+                  <form class=" column" action="https://api.web3forms.com/submit" method="POST" id="form">
                     <div class="row g-3">
+                        <input type="hidden" name="access_key" value="ebe59053-0f8d-457f-8f05-d9c7b5b2b02a">
+                        <input type="hidden" name="subject" value="Order Request from website">
+                        <input type="hidden" name="from_name" value="Drutech.co">
+                        <input type="hidden" name="replyto" value=''>
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                       <div class="col-sm-6">
-                        <label for="firstName" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-                        <div class="invalid-feedback">
-                          Valid first name is required.
-                        </div>
+                        <label for="firstName" class="form-label">First name<span style="color:red;">*</span></label>
+                        <input type="text" name="First Name"class="input-form form-control" id="firstName" placeholder="" value="" required>
                       </div>
-          
                       <div class="col-sm-6">
-                        <label for="lastName" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-                        <div class="invalid-feedback">
-                          Valid last name is required.
-                        </div>
+                        <label for="lastName" class="form-label">Last name<span style="color:red;">*</span></label>
+                        <input type="text" name="Last Name"class="input-form form-control" id="lastName" placeholder="" value="" required>
                       </div>
                       <div class="col-12">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
-                        <div class="invalid-feedback">
-                          Please enter a valid email address for shipping updates.
-                        </div>
+                        <label for="email" class="form-label">Email<span style="color:red;">*</span></label>
+                        <input type="email"name="Email" class="input-form form-control" id="email" placeholder="you@example.com" required>
                       </div>
                       <div class="col-md-5">
-                        <label for="country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="address" placeholder="Country Name" required="">
-                        <div class="invalid-feedback">
-                          Please select a valid country.
-                        </div>
+                        <label for="country" class="form-label">Country<span style="color:red;">*</span></label>
+                        <input type="text" name="Country" class="input-form form-control" id="address" placeholder="Country Name" required>
                       </div>
-          
                       <div class="col-md-4">
-                        <label for="state" class="form-label">City</label>
-                        <input type="text" class="form-control" id="address" placeholder="Country Name" required="">
-                        <div class="invalid-feedback">
-                          Please provide a valid city.
-                        </div>
-                      </div>
-          
-                      <div class="col-md-3">
-                        <label for="zip" class="form-label">Zip</label>
-                        <input type="text" class="form-control" id="zip" placeholder="" required="">
-                        <div class="invalid-feedback">
-                          Zip code required.
-                        </div>
+                        <label for="state" class="form-label">City<span style="color:red;">*</span></label>
+                        <input type="text" name="City" class="input-form form-control" id="address" placeholder="City Name" required>
                       </div>
                     </div>
                     <div class="vr"></div>
-                    <div>
-                        <span class="prod-disclaimer-check">Please make sure to fill in all the fields correctly! <br>This will ensure that the order request will be processed correctly and we can reach out to you accordingly.</span>
+                    <div id="cartItems"></div>
+                    <div class="btn-order-div">
+                        <button class="input-form w-40 btn btn-warning " type="submit">Place order request</button>
                     </div>
+                    <div id="result" style="font-size:0.8rem;font-weight: 700;color:#FF9843;"></div>
                 </form>
-                <div class="btn-order-div">
-                    <button class="w-40 btn btn-warning " type="submit">Place order request</button>
-                </div>
+
                 </div>
               </div>
             </main>
@@ -183,6 +213,7 @@
              <div class="footer-div col-md-4 d-flex align-items-center">
                <img class="footer-img" src="./assets/logo/DRUTECH LOGO1.svg" alt="logo"></img>
                <span class=" mb-md-0 text-body-secondary"> © <span id="year"> </span> Drutech</span>
+
              </div>
              <ul class=" socials  col-md-4  list-unstyled d-flex">
                <li class="ms-3"><a class="text-body-secondary" href="" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
@@ -314,10 +345,152 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCartIcon();
 });
 
+// const form = document.getElementById('form');
+//     const result = document.getElementById('result');
+    
+//     form.addEventListener('submit', function(e) {
+//       e.preventDefault();
+//       const formData = new FormData(form);
+//       const object = Object.fromEntries(formData);
+//       const json = JSON.stringify(object);
+//       result.innerHTML = "Please wait..."
+    
+//         fetch('https://api.web3forms.com/submit', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                     'Accept': 'application/json'
+//                 },
+//                 body: json
+//             })
+//             .then(async (response) => {
+//                 let json = await response.json();
+//                 if (response.status == 200) {
+//                     result.innerHTML = json.message;
+//                 } else {
+//                     console.log(response);
+//                     result.innerHTML = json.message;
+//                 }
+//             })
+//             .catch(error => {
+//                 console.log(error);
+//                 result.innerHTML = "Something went wrong!";
+//             })
+//             .then(function() {
+//                 form.reset();
+//                 setTimeout(() => {
+//                     result.style.display = "none";
+//                 }, 3000);
+//             });
+//     });
 
+    // Function to handle form submission
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
     
+    // Get the user's email from the form data
+    const userEmail = formData.get('Email');
+    
+    // Add cart details to the form data
+    const cartItems = getCartItems();
+    formData.append('Cart Items', cartItems);
+    
+    // Convert the form data to JSON
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    
+    result.innerHTML = "Please wait...";
+
+    // Submit the form data
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+            result.innerHTML = json.message;
+        } else {
+            console.log(response);
+            result.innerHTML = json.message;
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+    })
+    .then(function() {
+        form.reset();
+        setTimeout(() => {
+            result.style.display = "none";
+        }, 3000);
+    });
+});
+
+// Function to get cart items
+function getCartItems() {
+    let itemsString = '';
+    cart.forEach(item => {
+        itemsString += `- ${item.title}, Quantity: ${item.quantity}\n`;
+    });
+    return itemsString;
+}
+
+    // Function to set the value of the hidden input field "replyto" to the user's email
+function setReplyToValue() {
+    const emailInput = document.getElementById('email');
+    const replyToInput = document.querySelector('input[name="replyto"]');
+    replyToInput.value = emailInput.value;
+}
+
+// Add an event listener to the email input field to update the replyto value
+const emailInput = document.getElementById('email');
+emailInput.addEventListener('input', setReplyToValue);
+
+
+// Function to get cart items with images
+function getCartItemsWithImages() {
+            let itemsHTML = '';
+            let totalItems = 0;
+            let uniqueItems = {};
+
+            // Retrieve cart items from local storage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Group items by title
+            cart.forEach(item => {
+                if (!uniqueItems[item.title]) {
+                    uniqueItems[item.title] = { quantity: item.quantity, image: item.image };
+                } else {
+                    uniqueItems[item.title].quantity += item.quantity;
+                }
+                totalItems += item.quantity;
+            });
+
+            // Construct HTML with item details and images
+            for (const [title, details] of Object.entries(uniqueItems)) {
+                itemsHTML += `<div class="item">
+                    <img class="item-image" src="${details.image}" alt="${title}">
+                    <div class="item-title">${title} </div>
+                    <div class="item-quantity"> x ${details.quantity}</div>
+                </div>`;
+            }
+            
+            return { itemsHTML, totalItems };
+        }
+
+        // Display cart items with images
+        const { itemsHTML, totalItems } = getCartItemsWithImages();
+        const cartItemsContainer = document.getElementById('cartItems');
+        cartItemsContainer.innerHTML = `<div id="cartHeader">Your Cart <span class="badge bg-warning rounded-pill">${totalItems}</span></div>` + itemsHTML;
+
+        
       </script>
-    
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./index.js"></script>

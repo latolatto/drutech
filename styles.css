@@ -240,7 +240,7 @@ div.container-fluid.justify-content-md-center{
   }
 
   .seksioni-2-cart {
-    margin-top:7%;
+    margin-top:5%;
     display:grid;
     grid-template-rows: 4fr 0.2fr;
     gap:2rem;
