@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drutech | Products  </title>
+    <title>Drutech | About  </title>
     <link rel="icon" type="image/x-icon" href="./assets/logo/DRUTECH LOGO1.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,10 +50,12 @@
             <span class="badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" id="cartItemCount">0</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="cartIcon">
+            <div  id="cartDropdownMenu"></div>
+            <hr class="dropdown-divider">
              <a class="dropdown-item" href="cart.html">View Cart</a>
              <a class="dropdown-item" href="checkout.html">Proceed to Checkout</a>
         </div>
-      </div>
+        </div>
       <div class="seksioni-2 container">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -87,6 +89,7 @@
      <script>
 
       $('.dropdown-toggle').dropdown();
+
 
 // Initialize cart array to store added items
 let cart = [];
@@ -140,6 +143,9 @@ function addToCartClicked(event) {
 
     // Save cart details to local storage
     saveCartToLocalStorage();
+
+    // Update cart dropdown
+    updateCartDropdown(); // Add this line to update the dropdown immediately after adding an item to the cart
 }
 
 // Function to add a product to the cart
@@ -148,6 +154,13 @@ function addToCart(title, imageSrc, quantity) {
     const product = { title: title, image: imageSrc, quantity: quantity };
     // Push the product into the cart array
     cart.push(product);
+}
+// Function to remove a product from the cart
+function removeFromCart(index) {
+    cart.splice(index, 1); // Remove item from cart array
+    localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in local storage
+    updateCartIcon(); // Update cart icon
+    updateCartDropdown(); // Update cart dropdown menu
 }
 
 // Function to update the cart icon
@@ -192,6 +205,44 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCartIcon();
 });
 
+// Function to get cart items with delete buttons
+function getCartItemsWithDeleteButtons(cart) {
+            let itemsHTML = '';
+
+            // Construct HTML with item details and delete buttons
+            cart.forEach((item, index) => {
+                itemsHTML += `<div class="dropdown-item item-container" data-index="${index}">
+                  <img class="cart-img"src="${item.image}" alt="${item.title}" >
+                    <div class="item-details">
+                        <div class="item-title">${item.title}<span class="item-quantity"> x ${item.quantity}<span></div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#8b0000" class="delete-icon bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+</svg>
+                </div>`;
+            });
+
+            return itemsHTML;
+        }
+
+        // Function to update cart dropdown menu
+        function updateCartDropdown() {
+            const cartDropdownMenu = document.getElementById('cartDropdownMenu');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cartDropdownMenu.innerHTML = getCartItemsWithDeleteButtons(cart);
+        }
+
+// Add event listener to delete buttons using event delegation
+document.getElementById('cartDropdownMenu').addEventListener('click', function(event) {
+    if (event.target.classList.contains('delete-icon')) {
+        const itemIndex = event.target.parentElement.dataset.index;
+        removeFromCart(itemIndex); // Call removeFromCart function to remove item from cart
+    }
+});
+
+        // Display initial cart items with delete buttons
+        updateCartDropdown();
 
 
   </script>
