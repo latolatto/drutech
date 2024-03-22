@@ -173,6 +173,17 @@ div.container-fluid.justify-content-md-center{
 .cart-img{
 height:5vh;
 }
+
+
+.empty-cart{
+  font-size:0.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.disabled {
+  opacity: 0.5; /* Reduce opacity */
+  display:none;}
 .item-group {
   margin-bottom: 5%;
 }
@@ -445,6 +456,10 @@ height:5vh;
 #searchBar{
   width:100%;
 
+}
+
+.btn{
+  border-radius:25px;
 }
 .album-title-ballina-catalogue{
     /* color:#473C38;

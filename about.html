@@ -52,8 +52,8 @@
           <div class="dropdown-menu" aria-labelledby="cartIcon">
             <div  id="cartDropdownMenu"></div>
             <hr class="dropdown-divider">
-             <a class="dropdown-item" href="cart.html">View Cart</a>
-             <a class="dropdown-item" href="checkout.html">Proceed to Checkout</a>
+            <a id='viewCartLink'class="dropdown-item" href="cart.html">View Cart</a>
+            <a id='checkoutLink'class="dropdown-item" href="checkout.html">Proceed to Checkout</a>
         </div>
         </div>
       <div class="seksioni-2 container">
@@ -148,19 +148,39 @@ function addToCartClicked(event) {
     updateCartDropdown(); // Add this line to update the dropdown immediately after adding an item to the cart
 }
 
-// Function to add a product to the cart
+// Function to add a product to the cart or increment its quantity if already exists
 function addToCart(title, imageSrc, quantity) {
-    // Example: Store product in an object
-    const product = { title: title, image: imageSrc, quantity: quantity };
-    // Push the product into the cart array
-    cart.push(product);
+    // Check if the item already exists in the cart
+    const existingItemIndex = cart.findIndex(item => item.title === title);
+    
+    if (existingItemIndex !== -1) {
+        // If the item exists, increment its quantity
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        // If the item doesn't exist, add it to the cart
+        const product = { title: title, image: imageSrc, quantity: quantity };
+        cart.push(product);
+    }
 }
-// Function to remove a product from the cart
+
+// Function to remove a product from the cart or decrement its quantity
 function removeFromCart(index) {
-    cart.splice(index, 1); // Remove item from cart array
-    localStorage.setItem('cart', JSON.stringify(cart)); // Update cart in local storage
-    updateCartIcon(); // Update cart icon
-    updateCartDropdown(); // Update cart dropdown menu
+    // Remove the item from the cart array
+    const removedItem = cart.splice(index, 1)[0];
+
+    // Update cart in local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update cart icon
+    updateCartIcon();
+
+    // Update cart dropdown menu
+    updateCartDropdown();
+
+    // If the item was removed completely, update the product display
+    if (removedItem) {
+        displayItem(product);
+    }
 }
 
 // Function to update the cart icon
@@ -205,33 +225,63 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCartIcon();
 });
 
+
 // Function to get cart items with delete buttons
 function getCartItemsWithDeleteButtons(cart) {
-            let itemsHTML = '';
+    let itemsHTML = '';
+    const groupedCart = groupCartItems(cart); // Group cart items by title
 
-            // Construct HTML with item details and delete buttons
-            cart.forEach((item, index) => {
-                itemsHTML += `<div class="dropdown-item item-container" data-index="${index}">
-                  <img class="cart-img"src="${item.image}" alt="${item.title}" >
-                    <div class="item-details">
-                        <div class="item-title">${item.title}<span class="item-quantity"> x ${item.quantity}<span></div>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#8b0000" class="delete-icon bi bi-trash" viewBox="0 0 16 16">
-  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-</svg>
-                </div>`;
-            });
+    // Construct HTML with grouped item details and delete buttons
+    groupedCart.forEach((item, index) => {
+        itemsHTML += `<div class="dropdown-item item-container" data-index="${index}">
+            <img class="cart-img" src="${item.image}" alt="${item.title}">
+            <div class="item-details">
+                <div class="item-title">${item.title}<span class="item-quantity"> x ${item.quantity}<span></div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#8b0000" class="delete-icon bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+            </svg>
+        </div>`;
+    });
 
-            return itemsHTML;
+    return itemsHTML;
+}
+
+
+// Function to group cart items by title and sum their quantities
+function groupCartItems(cart) {
+    const groupedCart = [];
+    cart.forEach(item => {
+        const existingItemIndex = groupedCart.findIndex(groupedItem => groupedItem.title === item.title);
+        if (existingItemIndex !== -1) {
+            // If item already exists in groupedCart, increment its quantity
+            groupedCart[existingItemIndex].quantity += item.quantity;
+        } else {
+            // If item doesn't exist, add it to groupedCart
+            groupedCart.push({ title: item.title, image: item.image, quantity: item.quantity });
         }
+    });
+    return groupedCart;
+}
+               // Function to update cart dropdown menu
+function updateCartDropdown() {
+    const cartDropdownMenu = document.getElementById('cartDropdownMenu');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    if (cart.length === 0) {
+        cartDropdownMenu.innerHTML = `<div class="empty-cart">Your cart is empty !!</div>`;
+        // Disable links for "View Cart" and "Proceed to Checkout"
+        document.getElementById('viewCartLink').classList.add('disabled');
+        document.getElementById('checkoutLink').classList.add('disabled');
+    } else {
+        cartDropdownMenu.innerHTML = getCartItemsWithDeleteButtons(cart);
+        // Enable links for "View Cart" and "Proceed to Checkout"
+        document.getElementById('viewCartLink').classList.remove('disabled');
+        document.getElementById('checkoutLink').classList.remove('disabled');
+    }
+}
 
-        // Function to update cart dropdown menu
-        function updateCartDropdown() {
-            const cartDropdownMenu = document.getElementById('cartDropdownMenu');
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cartDropdownMenu.innerHTML = getCartItemsWithDeleteButtons(cart);
-        }
 
 // Add event listener to delete buttons using event delegation
 document.getElementById('cartDropdownMenu').addEventListener('click', function(event) {

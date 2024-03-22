@@ -147,8 +147,8 @@
               <span class="badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning" id="cartItemCount">0</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="cartIcon">
-               <a class="dropdown-item" href="cart.html">View Cart</a>
-               <a class="dropdown-item" href="checkout.html">Proceed to Checkout</a>
+                <a id='viewCartLink'class="dropdown-item" href="cart.html">View Cart</a>
+                <a id='checkoutLink'class="dropdown-item" href="checkout.html">Proceed to Checkout</a>
           </div>
         </div>
       </div>
@@ -162,7 +162,7 @@
           
               <div class="row g-5">
                 <div class="viewcart-div">
-                    <button type="submit" class="btn-cart btn btn-secondary" onclick="goCart()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                    <button id="btn-cart" type="submit" class="btn-cart btn btn-secondary" onclick="goCart()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
                       </svg> Go back to cart</button>
                 </div>
@@ -345,50 +345,13 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCartIcon();
 });
 
-// const form = document.getElementById('form');
-//     const result = document.getElementById('result');
-    
-//     form.addEventListener('submit', function(e) {
-//       e.preventDefault();
-//       const formData = new FormData(form);
-//       const object = Object.fromEntries(formData);
-//       const json = JSON.stringify(object);
-//       result.innerHTML = "Please wait..."
-    
-//         fetch('https://api.web3forms.com/submit', {
-//                 method: 'POST',
-//                 headers: {
-//                     'Content-Type': 'application/json',
-//                     'Accept': 'application/json'
-//                 },
-//                 body: json
-//             })
-//             .then(async (response) => {
-//                 let json = await response.json();
-//                 if (response.status == 200) {
-//                     result.innerHTML = json.message;
-//                 } else {
-//                     console.log(response);
-//                     result.innerHTML = json.message;
-//                 }
-//             })
-//             .catch(error => {
-//                 console.log(error);
-//                 result.innerHTML = "Something went wrong!";
-//             })
-//             .then(function() {
-//                 form.reset();
-//                 setTimeout(() => {
-//                     result.style.display = "none";
-//                 }, 3000);
-//             });
-//     });
 
-    // Function to handle form submission
+
+// Function to handle form submission
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(form);
-    
+
     // Get the user's email from the form data
     const userEmail = formData.get('Email');
     
@@ -414,7 +377,7 @@ form.addEventListener('submit', function(e) {
     .then(async (response) => {
         let json = await response.json();
         if (response.status == 200) {
-            result.innerHTML = json.message;
+            result.innerHTML = "Thank you for your order request! We will get back to you as soon as possible!";
         } else {
             console.log(response);
             result.innerHTML = json.message;
@@ -429,8 +392,33 @@ form.addEventListener('submit', function(e) {
         setTimeout(() => {
             result.style.display = "none";
         }, 3000);
+
+        // Clear cart section on checkout page
+        clearCartSection();
+
+        // Clear cart from local storage
+        localStorage.removeItem('cart');
+
+        browseCatalog();
     });
 });
+
+ // Function to go back to cart
+function browseCatalog() {
+    const browseCatalog = document.getElementById('btn-cart');
+    browseCatalog.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
+                      </svg>Browse Catalogue`;
+    browseCatalog.onclick = function() {
+        window.location.href = 'catalogue.html';
+    };
+}
+// Function to clear cart section on checkout page
+function clearCartSection() {
+    const cartItemsContainer = document.getElementById('cartItems');
+    cartItemsContainer.innerHTML = `<div id="cartHeader">Your Cart <span class="badge bg-warning rounded-pill">0</span></div>`
+}
+
 
 // Function to get cart items
 function getCartItems() {
