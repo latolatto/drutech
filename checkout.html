@@ -94,6 +94,7 @@
             font-size: 0.8rem;
 
         }
+       
         .item-title {
             font-size: 0.8rem;
             /* font-weight: bold; */
@@ -112,7 +113,7 @@
     </style>
   </head>
   <body>
-    <div class="grid-container  ">
+    <div class="container ">
       <div class="grid1">
         <div class=" fixed-top justify-content-md-center"id="menuja">
             <div class="nav-logo navbar-brand"><a class="  logo-href act-link" href="./index.html"><img class="main-logo"  src="./assets/logo/DRUTECH_LOGO.png" alt="logo"></a></div>
@@ -199,7 +200,7 @@
                     <div class="vr"></div>
                     <div id="cartItems"></div>
                     <div class="btn-order-div">
-                        <button class="input-form w-40 btn btn-warning " type="submit">Place order request</button>
+                        <button id="submit-form"class="input-form w-40 btn btn-warning " type="submit">Place order request</button>
                     </div>
                     <div id="result" style="font-size:0.8rem;font-weight: 700;color:#FF9843;"></div>
                 </form>
@@ -213,7 +214,7 @@
              <div class="footer-div col-md-4 d-flex align-items-center">
                <img class="footer-img" src="./assets/logo/DRUTECH LOGO1.svg" alt="logo"></img>
                <span class=" mb-md-0 text-body-secondary"> © <span id="year"> </span> Drutech</span>
-
+               <li class="support-li" style="list-style: none;"><a href="./contact.html">Support</a></li>
              </div>
              <ul class=" socials  col-md-4  list-unstyled d-flex">
                <li class="ms-3"><a class="text-body-secondary" href="" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
@@ -400,8 +401,26 @@ form.addEventListener('submit', function(e) {
         localStorage.removeItem('cart');
 
         browseCatalog();
+
+
+        disableform();
     });
 });
+
+
+function disableform(){
+  const disableform=document.getElementById('form');
+  // Get all form input fields
+const inputFields = disableform.querySelectorAll('input, email, textarea');
+
+// Disable all input fields
+inputFields.forEach(input => {
+    input.disabled = true;
+});
+
+const submitbtn=document.getElementById('submit-form');
+submitbtn.disabled=true;
+}
 
  // Function to go back to cart
 function browseCatalog() {

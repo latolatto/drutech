@@ -65,11 +65,7 @@
     width:10%;
     /* height: 20vh; */
 }
-.buttons {
-    margin-top: 5%;
-    display:flex;
-    justify-content: space-around;
-}
+
 
 button {
     padding: 7% 7%;
@@ -108,8 +104,14 @@ input{
 .prod-disclaimer{
     text-align: center;
     padding-bottom:5%;
+    justify-self: center;
 }
 
+.checkout-btn{
+    width:100%;
+    justify-content: center;
+    display:flex;
+}
 h1{
     padding-top:2%;
 }
@@ -133,10 +135,28 @@ h1{
             padding:1%;
             color:white;
         }
+        .column{
+            display:grid;
+            grid-template-columns: 8fr 0.2fr  3fr;
+            width:100% !important;
+            gap:2rem;
+            justify-content: center;
+            margin-bottom:5%;
+            align-items: center;
+        }
+        .cart-empty{
+            text-align: center;
+            font-size: 1.1rem;
+            color:red;
+            font-weight:600;
+        }
+        .btn-hidden{
+            display:none;
+        }
     </style>
   </head>
   <body>
-    <div class="grid-container  ">
+    <div class="container ">
       <div class="grid1">
         <div class=" fixed-top justify-content-md-center"id="menuja">
             <div class="nav-logo navbar-brand"><a class="  logo-href act-link" href="./index.html"><img class="main-logo"  src="./assets/logo/DRUTECH_LOGO.png" alt="logo"></a></div>
@@ -166,22 +186,28 @@ h1{
             <li  class="email" style="list-style: none; justify-self: center;align-self: center;"><a class="email" href = "mailto: toshi.lazime@gmail.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000A6" class="bi bi-envelope-at" viewBox="0 0 16 16"> <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z"/> <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/></svg> toshi.lazime@gmail.com</a> </li> 
       </div>
       <div class="seksioni-2-cart container">
-         <div class=" shop-cart shadow-sm">
+         <div class=" shop-cart ">
              <h1>Shopping Cart</h1>
-             <span class="prod-disclaimer">*This website does not include online payment (yet)! <br>Instead, it sends us an order request that you made including your contact details, which we will use to reach out to you.</span>
              <button class="btn btn-secondary btn-cat " onclick="goBack()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
               </svg> Go back to browsing</button>
-             <div id="cartItems"></div>
-             <div class="buttons">
-                 <button class="btn btn-warning" onclick="proceedToCheckout()">Proceed to checkout</button>
-             </div>
+              <div class="column" id="column">
+                  <div id="cartItems"></div>
+                  <div class="vr" id="vr"></div>
+                  <div id="prod-disclaimer"><span class="prod-disclaimer">*This website does not include online payment (yet)! <br>Instead, it sends us an order request that you made including your contact details, which we will use to reach out to you.</span>
+                  </div>
+                </div>
+                <div class="checkout-btn">
+                  <button id='proceedToCheckout'class=" btn btn-warning" onclick="proceedToCheckout()">Proceed to checkout</button>
+               </div>
+
          </div>
-         <div  class="container grid3 ">
+         <div  class=" grid3 ">
               <footer class="  d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="position:relative; ">
                  <div class="footer-div col-md-4 d-flex align-items-center">
                      <img class="footer-img" src="./assets/logo/DRUTECH LOGO1.svg" alt="logo"></img>
                      <span class=" mb-md-0 text-body-secondary"> © <span id="year"> </span> Drutech</span>
+                     <li class="support-li" style="list-style: none;"><a href="./contact.html">Support</a></li>
                  </div>
                  <ul class=" socials  col-md-4  list-unstyled d-flex">
                      <li class="ms-3"><a class="text-body-secondary" href="" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
@@ -211,6 +237,19 @@ function populateCartItems() {
     cartItemsContainer.innerHTML = ''; // Clear existing items
 
     const groupedItems = groupItemsByTitle(cart);
+    if (cart.length === 0) {
+        cartItemsContainer.classList.add('cart-empty');
+        cartItemsContainer.textContent ='Your cart is empty!!';
+        const emptycart= document.getElementById('prod-disclaimer');
+        const emptycartvr= document.getElementById('vr');
+        emptycart.innerHTML = ''; 
+        emptycartvr.classList.remove('vr'); 
+        const columndiv = document.getElementById('column');
+        columndiv.classList.remove('column');
+        const proceedToCheckoutBtn = document.getElementById('proceedToCheckout');
+        proceedToCheckoutBtn.classList.add('btn-hidden');
+    }
+
 
     groupedItems.forEach((item, index) => {
         const itemDiv = document.createElement('div');
@@ -325,6 +364,37 @@ document.addEventListener('DOMContentLoaded', () => {
         populateCartItems(); // Display cart items when loading the saved cart data
     }
 });
+// Function to get cart items with images
+function getCartItemsWithImages() {
+            let itemsHTML = '';
+            let totalItems = 0;
+            let uniqueItems = {};
+
+            // Retrieve cart items from local storage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Group items by title
+            cart.forEach(item => {
+                if (!uniqueItems[item.title]) {
+                    uniqueItems[item.title] = { quantity: item.quantity, image: item.image };
+                } else {
+                    uniqueItems[item.title].quantity += item.quantity;
+                }
+                totalItems += item.quantity;
+            });
+
+            // Construct HTML with item details and images
+            for (const [title, details] of Object.entries(uniqueItems)) {
+                itemsHTML += `<div class="item">
+                    <img class="item-image" src="${details.image}" alt="${title}">
+                    <div class="item-title">${title} </div>
+                    <div class="item-quantity"> x ${details.quantity}</div>
+                </div>`;
+            }
+            
+            return { itemsHTML, totalItems };
+        }
+
 
   </script>
 

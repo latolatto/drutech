@@ -17,6 +17,12 @@ body{
 }
 
 
+
+/* CSS rule for button with black border */
+.button-with-border {
+  border: 1.5px solid black;
+}
+
 .grid1{
     display: flex;
     flex-direction: column;
@@ -277,6 +283,8 @@ height:5vh;
     margin-top:5%;
     display:grid;
     grid-template-rows: 4fr 0.2fr;
+    width:100%;
+    min-width:100% !important;
     gap:2rem;
   }
 
@@ -461,6 +469,8 @@ height:5vh;
 .btn{
   border-radius:25px;
 }
+
+
 .album-title-ballina-catalogue{
     /* color:#473C38;
     padding-bottom: 2%;
@@ -529,7 +539,7 @@ height:5vh;
 
   .album-img{
     /* width:30%; */
-    height:40vh;
+    height:30vh;
 
   }
 
@@ -675,7 +685,9 @@ footer{
   justify-content: end;
 }
 
-
+.support-li{
+  text-align: center;
+}
 
 /*portrait phone screen*/
 @media(min-width: 280px) and (max-width: 480px){
