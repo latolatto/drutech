@@ -117,7 +117,7 @@
        </div>
       <div  class="container grid3"  >
          <footer class="  d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="position:relative; ">
-         <div class="col-md-4 d-flex align-items-center">
+         <div class="footer-div col-md-4 d-flex align-items-center">
            <img class="footer-img" src="./assets/logo/DRUTECH LOGO1.svg" alt="logo"></img>
            <span class="mb-3 mb-md-0 text-body-secondary"> © <span id="year"> </span> Drutech</span>
          </div>
@@ -245,7 +245,7 @@ const displayItem = (items) => {
     root.innerHTML = ''; // Clear existing content
     items.forEach((item) => {
         const card = document.createElement('div');
-        card.classList.add('col-6-sm', 'ballina-col');
+        card.classList.add( 'ballina-col');
         card.innerHTML = `
             <div class="card">
                 <a class="card-text pop" href="#" type="" data-bs-toggle="modal" data-bs-target="#myModal${item.id}" data-item-id="${item.id}">

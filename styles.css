@@ -500,7 +500,9 @@ height:5vh;
 
 .btn-seemore:hover{
     /* color:#473C38; */
-    color:white;
+    background-color: #FFC107 !important;
+    color:black;
+
 }
 .album-row{
     display:flex;
@@ -587,21 +589,19 @@ height:5vh;
 }
 
   .btn-seemore{
-    border-width:0.15rem;
-    border-color: #503C3C  ;
+    border:0;
+    outline: 0;
     font-weight:600;
     color:#000000A6;
     border-radius:25px;
     font-size:1rem;
     display:flex;
     justify-content: center;
-    /* background-color: #B3A398; */
+    text-align: center;
+    background-color: #FFC107;
+    margin-right:0;
 }
-.btn-seemore:hover{
-    background-color:#7E6363 ;
-    outline: 0;
-    border-color:#00000000;
-}
+
 
 .page-link{
     /* border:0; */
@@ -689,6 +689,9 @@ footer{
   text-align: center;
 }
 
+.footer-div span{
+  font-size:0.8rem;
+}
 /*portrait phone screen*/
 @media(min-width: 280px) and (max-width: 480px){
   #menuja{
