@@ -211,7 +211,7 @@
                             <!-- Second column with description and order button -->
                             <div class="col-md-6 right-column">
                                 <h6>Product Description:</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies purus ut felis convallis, sit amet suscipit urna varius.</p>
+                                <p id="prod-description"></p>
                                 <div class="cart-div">
                                   <input type="number" id="quantityInput" min="1" value="1" class="form-control mr-2">
                                   <button class="btn btn-warning order-request-btn" >Add to Cart</button>
@@ -227,6 +227,7 @@
               <span class="album-see-more"> <button  class="album-see-more btn-seemore btn me-2 btn-sm btn-outline-secondary "  type="button">See more</button></span>
         </div>
       </div>
+      
       <div  class="container grid3 ">
         <footer class="  d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="position:relative; ">
          <div class="footer-div col-md-4 d-flex align-items-center">
@@ -326,31 +327,37 @@ const product = [
         id: 0,
         image: './assets/ballina-catalog/1.jpg',
         title: 'Z Flip Foldable Mobile',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 1,
         image: './assets/ballina-catalog/2.jpg',
         title: 'Air Pods Pro',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 2,
         image: './assets/ballina-catalog/3.jpg',
         title: '250D DSLR item',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 3,
         image: './assets/ballina-catalog/4.jpg',
         title: 'Headphones',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 4,
         image: './assets/ballina-catalog/5.jpg',
         title: 'Audio item',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 5,
         image: './assets/ballina-catalog/6.jpg',
         title: 'Smart Watch',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
 ];
 
@@ -379,6 +386,7 @@ const displayItem = (items) => {
                 // Populate modal with product data
                 document.getElementById("exampleModalLabel").textContent = selectedItem.title;
                 document.querySelector(".imagepreview").setAttribute("src", selectedItem.image);
+                document.getElementById("prod-description").textContent = selectedItem.description;
                 $('#myModal').modal('show'); // Show the modal
             }
         });
@@ -597,7 +605,8 @@ document.getElementById('cartDropdownMenu').addEventListener('click', function(e
 
 
 </script>
-
+<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+<div class="commonninja_component pid-df9ce6fe-60c5-4d41-b163-2c7fe64c5a68"></div>
    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

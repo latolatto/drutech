@@ -696,6 +696,10 @@ footer{
 .footer-div li{
   font-size:0.8rem;
 }
+
+#prod-description{
+  font-size:0.89rem;
+}
 /*portrait phone screen*/
 @media(min-width: 280px) and (max-width: 480px){
   #menuja{

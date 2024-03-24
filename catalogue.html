@@ -90,7 +90,7 @@
                         <!-- Second column with description and order button -->
                         <div class="col-md-6 right-column">
                             <h6>Product Description:</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies purus ut felis convallis, sit amet suscipit urna varius.</p>
+                            <p id="prod-description"></p>
                             <div class="cart-div">
                               <input type="number" id="quantityInput" min="1" value="1" class="form-control mr-2">
                               <button class="btn btn-warning order-request-btn" >Add to Cart</button>
@@ -211,31 +211,37 @@ const product = [
         id: 0,
         image: './assets/ballina-catalog/1.jpg',
         title: 'Z Flip Foldable Mobile',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 1,
         image: './assets/ballina-catalog/2.jpg',
         title: 'Air Pods Pro',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 2,
         image: './assets/ballina-catalog/3.jpg',
         title: '250D DSLR item',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 3,
         image: './assets/ballina-catalog/4.jpg',
         title: 'Headphones',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 4,
         image: './assets/ballina-catalog/5.jpg',
         title: 'Audio item',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
         id: 5,
         image: './assets/ballina-catalog/6.jpg',
         title: 'Smart Watch',
+        description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
 ];
 
@@ -264,6 +270,7 @@ const displayItem = (items) => {
                 // Populate modal with product data
                 document.getElementById("exampleModalLabel").textContent = selectedItem.title;
                 document.querySelector(".imagepreview").setAttribute("src", selectedItem.image);
+                document.getElementById("prod-description").textContent = selectedItem.description;
                 $('#myModal').modal('show'); // Show the modal
             }
         });
