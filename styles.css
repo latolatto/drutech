@@ -757,7 +757,9 @@ footer{
     display: block!important;
     } */
 
-
+.email{
+  display:none;
+}
     .overlay { 
         top:28%;
         display:flex;
