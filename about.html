@@ -13,6 +13,152 @@
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="./styles.css" rel="stylesheet">
+    <style>
+      .front-img{
+        height:70vh;
+        /* width:100%; */
+      }
+
+      h1{
+        font-family: "Alegreya SC", serif;
+        text-align: center;
+      }
+
+      .about-title{
+        font-weight: 600;
+      }
+      .check-cat{
+        text-decoration-color: black;
+      }
+
+
+      body {
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #fff;
+}
+
+
+.card-group {
+  gap:2rem;
+}
+
+.card-title{
+  color:black;
+}
+
+.slider-wrapper {
+  position: relative;
+}
+.slider-wrapper .slide-button {
+  position: absolute;
+  top: 50%;
+  outline: none;
+  border: none;
+  height: 3rem;
+  width: 3rem;
+  z-index: 5;
+  color: #fff;
+  display: flex;
+  cursor: pointer;
+  background: #000;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.slider-wrapper .slide-button:hover {
+  /* background: #404040; */
+}
+.slider-wrapper .slide-button#prev-slide {
+  left: -1rem;
+  display: none;
+}
+.slider-wrapper .slide-button#next-slide {
+  right: -1rem;
+}
+.slider-wrapper .image-list {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2rem;
+  font-size: 0;
+  list-style: none;
+  margin-bottom: 3%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.slider-wrapper .image-list::-webkit-scrollbar {
+  display: none;
+}
+.slider-wrapper .image-list .image-item {
+  width: 15rem;
+  height: 12rem;
+  object-fit: cover;
+}
+ .slider-scrollbar {
+  height: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.slider-scrollbar .scrollbar-track {
+  background: #ccc;
+  width: 100%;
+  height: 0.1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  position: relative;
+}
+.slider-scrollbar:hover .scrollbar-track {
+  height: 0.2rem;
+}
+.slider-scrollbar .scrollbar-thumb {
+  position: absolute;
+  background: #000;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  cursor: grab;
+  border-radius: inherit;
+}
+.slider-scrollbar .scrollbar-thumb:active {
+  cursor: grabbing;
+  height: 0.5rem;
+  top: -2px;
+}
+.slider-scrollbar .scrollbar-thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  bottom: -10px;
+}
+/* Styles for mobile and tablets */
+@media only screen and (max-width: 1023px) {
+  .slider-wrapper .slide-button {
+    display: none !important;
+  }
+  .slider-wrapper .image-list {
+    gap: 2rem;
+    margin-bottom: 7%;
+    scroll-snap-type: x mandatory;
+  }
+  .slider-wrapper .image-list .image-item {
+    width: 280px;
+    height: 380px;
+  }
+  .slider-scrollbar .scrollbar-thumb {
+    width: 20%;
+  }
+}
+</style>
   </head>
   <body>
     <div class="grid-container  ">
@@ -27,16 +173,16 @@
               <div class="collapse navbar-collapse justify-content-md-center " id="navbarTogglerDemo03"  >
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0"  >
                   <li class="nav-item">
-                    <a class=" act-link nav-link  " id="nav-item" href="./about.html">About us </a>
+                    <a class=" act-link nav-link  " id="nav-item" href="./about.html">ABOUT US </a>
                   </li>
                   <li class="nav-item">
-                    <a class=" act-link nav-link  " id="nav-item" href="./catalogue.html">Catalogue </a>
+                    <a class=" act-link nav-link  " id="nav-item" href="./catalogue.html">CATALOGUE </a>
                   </li>
                   <li class="nav-item">
-                    <a class="act-link nav-link" href="./products.html"id="nav-item">Products</a>
+                    <a class="act-link nav-link" href="./products.html"id="nav-item">OUR WORK</a>
                   </li>
                   <li class="nav-item " >
-                    <a class="act-link nav-link" href="./contact.html"id="nav-item">Contact</a>
+                    <a class="act-link nav-link" href="./contact.html"id="nav-item">CONTACT</a>
                   </li>
                 </ul>
               </div>
@@ -57,12 +203,103 @@
         </div>
         </div>
       <div class="seksioni-2 container">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      </div>
-      <div  class="container grid3 ">
+        <div class="page-top my-3 pb-5 ">
+          <div class="row p-4 pb-0 pe-lg-0  align-items-center  ">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+              <h1 class="  lh-1 text-body-emphasis">Welcome to Dru Tech: <br> Where Woodcraft meets Artistry</h1>
+              <!-- <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p> -->
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                <img class="front-img rounded-lg-3" src="./assets/other-pages/aboutuswallpaper.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="aboutus-intro bg-body-tertiary rounded-3 pt-5 pb-5 card">
+          <div class="card-body">
+            <h4 class="about-title card-title">ABOUT US</h4>
+            <p class="card-text">We're Dru Tech, where woodworking mastery meets innovation. Our dedicated artisans blend tradition with modern flair to create bespoke pieces that redefine craftsmanship. Each creation reflects our unwavering commitment to quality and attention to detail. Join us in discovering the artistry of woodcraft where every piece tells a story of skill, dedication, and creativity.</p>
+            <p class="card-text "><a class="check-cat" href='./products.html'><small class="text-body-secondary">Check Our Work <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+            </svg></small></p></a>
+            <p class="card-text pt-5">Since our establishment in 2019, we have been synonymous with precision craftsmanship, melding age-old traditions with contemporary flair to create bespoke pieces that captivate the senses and elevate the ordinary to extraordinary. With a team of dedicated artisans spanning generations, we breathe life into wood, transforming it into exquisite works of art that bear the hallmark of our passion, creativity, and unwavering commitment to excellence. </p>
+          </div>
+          <!-- <img src="..." class="card-img-bottom" alt="..."> -->
+        </div>
+        <div class="card-group pt-5 pb-5 ">
+          <div class="card ">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body shadow-sm">
+              <h5 class="card-title">Our Company's Future-Oriented Vision </h5>
+              <p class="card-text">At Dru Tech, our vision is simple: to elevate the ordinary to extraordinary through our craftsmanship. We strive to inspire awe, evoke emotion, and create lasting impressions with every piece we create. </p>
+            </div>
+            <!-- <div class="card-footer">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div> -->
+          </div>
+          <div class="card ">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body shadow-sm">
+              <h5 class="card-title">Unique Bespoke Sculpted Pieces</h5>
+              <p class="card-text">At Dru Tech, we don't just make furniture; we craft experiences. Our bespoke pieces tell a story of skill, dedication, and creativity, blending traditional techniques with modern innovation.</p>
+            </div>
+            <!-- <div class="card-footer">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div> -->
+          </div>
+          <div class="card ">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body shadow-sm">
+              <h5 class="card-title">Discover Woodworking Excellence </h5>
+              <p class="card-text">Explore the world of Dru Tech and experience the essence of woodworking excellence. From precision craftsmanship to bespoke solutions, we're here to turn your dreams into reality. </p>
+            </div>
+            <!-- <div class="card-footer">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div> -->
+          </div>
+        </div>
+        <div class="card pt-5 pb-5 ">
+          <div class="card-body pb-5">
+            <h4 class="about-title card-title">Meet Our Team: The Heartbeat of Dru Tech</h4>
+            <p class="card-text">Our diverse team is the cornerstone of our success, comprising 15 to 20 dedicated artisans. Spanning ages from 20 to 60+, each member brings a unique blend of experience and creativity to our craft.  From seasoned veterans with decades of craftsmanship to fresh talents eager to make their mark,  we work hand in hand, pushing boundaries and setting new standards for woodworking artistry.</p>
+            <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+          </div>
+          <!-- <img src="./assets/other-pages/teamimg.jpg" class="card-img-bottom" alt="..."> -->
+          <div class="container">
+            <div class="slider-wrapper">
+              <button id="prev-slide" class="slide-button material-symbols-rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                  <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+                </svg>              </button>
+              <ul class="image-list">
+                <img class="image-item" src="./assets/other-pages/team1.jpg" alt="img-1" />
+                <img class="image-item" src="./assets/other-pages/team2.jpg" alt="img-2" />
+                <img class="image-item" src="./assets/other-pages/team3.jpg" alt="img-3" />
+                <img class="image-item" src="./assets/other-pages/team4.jpg" alt="img-4" />
+                <img class="image-item" src="./assets/other-pages/team5.jpg" alt="img-5" />
+                <!-- <img class="image-item" src="images/img-6.jpg" alt="img-6" />
+                <img class="image-item" src="images/img-7.jpg" alt="img-7" />
+                <img class="image-item" src="images/img-8.jpg" alt="img-8" />
+                <img class="image-item" src="images/img-9.jpg" alt="img-9" />
+                <img class="image-item" src="images/img-10.jpg" alt="img-10" /> -->
+              </ul>
+              <button id="next-slide" class="slide-button material-symbols-rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+                  <path d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"/>
+                </svg>              </button>
+            </div>
+            <div class="slider-scrollbar">
+              <div class="scrollbar-track">
+                <div class="scrollbar-thumb"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="  text-center  p-5">
+          <h3 class="about-title card-title">WHAT'S NEXT FOR DRUTECH?</h3>
+          <p class="seksioni2-p  text-muted">
+            As pioneers in woodworking excellence, we at Dru Tech are constantly looking towards the horizon. Currently, we're in the process of constructing a massive warehouse, a testament to our commitment to expansion and innovation. Our sights are set on reaching new international markets, building upon existing partnerships, and connecting with customers across borders. Furthermore, we are dedicated to staying at the forefront of technology and carving trends, ensuring that our craftsmanship remains unparalleled. The future holds endless possibilities for us, and we're excited to continue pushing the boundaries of woodworking mastery.
+        </div>
+        <div  class="container grid3 ">
         <footer class="  d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="position:relative; ">
          <div class="footer-div col-md-4 d-flex align-items-center">
            <img class="footer-img" src="./assets/logo/DRUTECH LOGO1.svg" alt="logo"></img>
@@ -87,6 +324,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
      <script>
+
 
       $('.dropdown-toggle').dropdown();
 
@@ -293,6 +531,9 @@ document.getElementById('cartDropdownMenu').addEventListener('click', function(e
 
         // Display initial cart items with delete buttons
         updateCartDropdown();
+
+
+
 
 
   </script>

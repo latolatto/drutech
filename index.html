@@ -17,6 +17,62 @@
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
+    <style>
+      .scroll {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 1;
+    padding: 5%;
+}
+
+.slide-img img {
+	/* height: 200px;
+	min-width: 400px; */
+  height:8rem;
+  width:14rem;
+}
+
+.m-scroll {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: scrollText 20s infinite linear;
+    margin: 0;
+    font-size: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+	height: 200px;
+}
+
+.m-scroll span {
+    display: inline-block;
+	  width: fit-content;
+    margin: 0 20px;
+    padding: 0;
+    color: white;
+}
+
+span.blank {
+	width: 500px !important;
+}
+
+span.FARAL {
+	width: 800px !important;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+    </style>
   </head>
   <body>
     <div class="grid-container  ">
@@ -36,10 +92,10 @@
                     <a class=" navbar-brand logo-href act-link" href="./index.html"><img class="main-logo"  src="./assets/logo/DRUTECH_LOGO.png" alt="logo"></a>
                   </li> -->
                   <li class="nav-item">
-                    <a class=" act-link nav-link  " id="nav-item" href="./about.html">About us </a>
+                    <a class=" act-link nav-link  " id="nav-item" href="./about.html">ABOUT US </a>
                   </li>
                   <li class="nav-item">
-                    <a class=" act-link nav-link  " id="nav-item" href="./catalogue.html">Catalogue </a>
+                    <a class=" act-link nav-link  " id="nav-item" href="./catalogue.html">CATALOGUE </a>
                   </li>
                   <!-- <li class="nav-item dropdown">
                    <a class="act-link nav-link dropdown-toggle" id="nav-item" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalogue</a>
@@ -52,10 +108,10 @@
                     </ul>
                   </li> -->
                   <li class="nav-item">
-                    <a class="act-link nav-link" href="./products.html"id="nav-item">Products</a>
+                    <a class="act-link nav-link" href="./products.html"id="nav-item">OUR WORK</a>
                   </li>
                   <li class="nav-item " >
-                    <a class="act-link nav-link" href="./contact.html"id="nav-item">Contact</a>
+                    <a class="act-link nav-link" href="./contact.html"id="nav-item">CONTACT</a>
                   </li>
                   <!-- <li>
                    <button class="btn me-2 mainbutton" id="myButton" type="button">Place an order</button>
@@ -86,7 +142,7 @@
         </div>
         <div class="overlay">
           <h1 class="overlay-h1"> Handcrafted Excellence and Unique Bespoke Sculpted Pieces</h1>
-          <button class="btn me-2 mainbutton" id="myButton order-mainbutton" type="button" onclick="shopnow()">Place an order</button>
+          <button class="btn me-2 mainbutton" id="myButton order-mainbutton" type="button" onclick="shopnow()">Browse products</button>
         </div>
          <div class=" karuseli sticky-top" style="z-index: -2;" >
            <div id="carouselExampleSlidesOnly " class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -186,7 +242,31 @@
                 </div> -->
               </div>
           </div>
-        </div>      
+        </div>   
+        <div class="scroll container">
+          <span class="album-title-ballina  border-top justify-content-center" style="font-size:1.7rem;">OUR CUSTOMERS ARE FROM :</span>
+          <div class="m-scroll">
+              <span class="slide-img"><img src="./assets/flags/albania.gif" alt="albania's flag"></span>
+              <span class="slide-img"><img src="./assets/flags/kosovo.gif" alt="kosova's flag"></span>
+              <span class="slide-img"><img src="./assets/flags/switzerland.gif" alt="switzerland's flag"></span>
+              <span class="slide-img"><img src="./assets/flags/italy.gif" alt="italy's flag"></span>
+              <span class="slide-img"><img src="./assets/flags/greece.gif" alt="greece's flag"></span>
+              <span class="slide-img"><img src="./assets/flags/bosnia.gif" alt="bosnia's flag"></span>
+              <span class="slide-img"><img src="./assets/flags/croatia.gif" alt="croatia's flag"></span>
+              <span class="slide-img"><img src="./assets/flags/austria.gif" alt="austria's flag"></span>
+              <span class="slide-img"><img src="./assets/flags/netherlands.gif" alt="netherlands' flag"></span>
+
+              <span class="slide-img"><img src="./assets/flags/albania.gif" alt="albania's flag"></span>
+        <span class="slide-img"><img src="./assets/flags/kosovo.gif" alt="kosova's flag"></span>
+        <span class="slide-img"><img src="./assets/flags/switzerland.gif" alt="switzerland's flag"></span>
+        <span class="slide-img"><img src="./assets/flags/italy.gif" alt="italy's flag"></span>
+        <span class="slide-img"><img src="./assets/flags/greece.gif" alt="greece's flag"></span>
+        <span class="slide-img"><img src="./assets/flags/bosnia.gif" alt="bosnia's flag"></span>
+        <span class="slide-img"><img src="./assets/flags/croatia.gif" alt="croatia's flag"></span>
+        <span class="slide-img"><img src="./assets/flags/austria.gif" alt="austria's flag"></span>
+        <span class="slide-img"><img src="./assets/flags/netherlands.gif" alt="netherlands' flag"></span>
+          </div>
+      </div>   
         <div class="browse-catg" >
             <div class="data">
                <span class="album-title-ballina  border-top justify-content-center">BROWSE OUR BEST SELLING PIECES</span>
@@ -224,8 +304,9 @@
             </div>
           </div>
             </div>
-              <span class="album-see-more"> <button  class="album-see-more btn-seemore btn me-2 btn-sm btn-outline-secondary "  type="button">See more</button></span>
+              <span class="album-see-more"> <button  class=" btn-seemore btn  btn-sm btn-outline-secondary "  type="button">See more</button></span>
         </div>
+        
       </div>
       
       <div  class="container grid3 ">
@@ -324,15 +405,15 @@ magnifier.style.overflow = 'hidden';
 
 const product = [
     {
-        id: 0,
+        id: 6,
         image: './assets/ballina-catalog/1.jpg',
-        title: 'Z Flip Foldable Mobile',
+        title: 'gloves',
         description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
-        id: 1,
+        id: 7,
         image: './assets/ballina-catalog/2.jpg',
-        title: 'Air Pods Pro',
+        title: 'laptop',
         description:'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. ',
     },
     {
@@ -605,11 +686,12 @@ document.getElementById('cartDropdownMenu').addEventListener('click', function(e
 
 
 </script>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
-<div class="commonninja_component pid-df9ce6fe-60c5-4d41-b163-2c7fe64c5a68"></div>
+<!-- <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+<div class="commonninja_component pid-df9ce6fe-60c5-4d41-b163-2c7fe64c5a68"></div> -->
    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
    <script src="./index.js"></script>
+   
   </body>
 </html>

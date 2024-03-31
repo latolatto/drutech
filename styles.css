@@ -43,7 +43,7 @@ div.container-fluid.justify-content-md-center{
     width:100%;
     display: flex;
     flex-direction: row;
-    gap:3.5rem;
+    gap:2rem;
     justify-content: center;
     padding-top: 1%;
     padding-bottom: 1%;
@@ -95,7 +95,7 @@ div.container-fluid.justify-content-md-center{
 
 .email{
   font-size:1rem;
-  font-weight:600;
+  font-weight:550;
   color: #000000A6 !important;
   text-decoration: none;
 }
@@ -124,16 +124,18 @@ div.container-fluid.justify-content-md-center{
 .badge {
   color: #503C3C; /* White text color */
   font-size: 0.8rem; /* Adjust font size */
+
 }
 
+#cartItemCount{
+  /* right:2rem; */
+}
 .dropdown-toggle::after {
   display: none;
 }
 
 
-#cartItemCount {
-        display: none; /* Initially hide the cart count */
-    }
+
 
 
 .dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
@@ -212,7 +214,7 @@ height:5vh;
     color:#fff;
     position:absolute;
     z-index:12;
-    top:35%;
+    top:45%;
     left:0;
     display:flex;
     flex-direction: column;
@@ -229,7 +231,7 @@ height:5vh;
   .overlay-h1{
     width:50%;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2.8em;
   }
 
   .mainbutton{
@@ -246,7 +248,9 @@ height:5vh;
     align-self: center;
     /* background-color: #B3A398; */
 }
-
+.mainbutton:hover{
+  background-color: white !important;
+}
 
   .grid{
     display:grid;
@@ -415,7 +419,7 @@ height:5vh;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    grid-gap: 3rem;
 }
   .browse-catg{
     padding-top:3%;
@@ -496,7 +500,18 @@ height:5vh;
     display:flex;
     justify-content: center;
 }
-
+.btn-seemore{
+  border:0;
+  outline: 0;
+  font-weight:600;
+  color:#000000A6;
+  border-radius:25px;
+  font-size:1rem;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #FFC107;
+}
 
 .btn-seemore:hover{
     /* color:#473C38; */
@@ -541,7 +556,7 @@ height:5vh;
 
   .album-img{
     /* width:30%; */
-    height:30vh;
+    height:35vh;
 
   }
 
@@ -588,19 +603,7 @@ height:5vh;
   width:18% !important;
 }
 
-  .btn-seemore{
-    border:0;
-    outline: 0;
-    font-weight:600;
-    color:#000000A6;
-    border-radius:25px;
-    font-size:1rem;
-    display:flex;
-    justify-content: center;
-    text-align: center;
-    background-color: #FFC107;
-    margin-right:0;
-}
+
 
 
 .page-link{
@@ -734,6 +737,10 @@ footer{
 
   }
 
+  /* .d-md-block {
+    display: block!important;
+    } */
+
   .navbar-toggler {
     border: none !important;
     outline: none !important;
@@ -769,7 +776,6 @@ footer{
         /* font-family: "Playfair Display SC", serif;
         font-weight: 700;
         font-style: normal; */
-        font-family: "Alegreya SC", serif;
         font-weight: 400;
       }
       .overlay-h1{
