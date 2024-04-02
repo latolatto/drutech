@@ -685,30 +685,32 @@ footer{
 
   #menuja{
     background-color:white;
-    display: flex;
+    /* display: flex;
     flex-direction: row-reverse;
     width:100%;
-    justify-content: space-between;
+    justify-content: space-between; */
+    width:100%;
+    display:grid;
   }
 
     .nav-logo {
-      display: flex;
+      /* display: flex;
       width: 100%;
       justify-content: center;
-      order: 1;
-
+      order: 1; */
     }
 
     .navbar{
       position:fixed;
       top:0;
       overflow: hidden;
-      width: 100%;
+      /* width: 100%; */
       font-weight: 500;
       background-color:#93977500;
-      order: -1;
-      z-index: 9;
+      /* order: -1;
+      z-index: 9; */
       padding-top:4.5%;
+
   }
   .container-fluid{
     padding-left:0;
@@ -876,6 +878,8 @@ footer{
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.5rem;
 }
+
+
 
 .ballina-col{
     /* width:40%; */
