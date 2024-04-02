@@ -706,6 +706,10 @@ footer{
 }
 /*portrait phone screen*/
 @media(min-width: 280px) and (max-width: 480px){
+
+  html,body{
+    overflow-x: hidden;
+}
   #menuja{
     background-color:white;
     display: flex;
