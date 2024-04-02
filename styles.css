@@ -689,8 +689,9 @@ footer{
     flex-direction: row-reverse;
     width:100%;
     justify-content: space-between; */
-    width:100%;
+    /* width:100%; */
     display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
   }
 
     .nav-logo {
@@ -698,6 +699,7 @@ footer{
       width: 100%;
       justify-content: center;
       order: 1; */
+      grid-column: 2/3;
     }
 
     .navbar{
@@ -710,6 +712,13 @@ footer{
       /* order: -1;
       z-index: 9; */
       padding-top:4.5%;
+      grid-column: 1/2;
+
+
+  }
+
+  #cartIcon{
+    grid-column: 3/4;
 
   }
   .container-fluid{
