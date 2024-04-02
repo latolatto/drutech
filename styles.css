@@ -882,14 +882,16 @@ footer{
 }
 
 #root {
-  width: 100%;
+  /* width: 100%; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.5rem;
 }
 
 
-
+#myModal{
+  height:60vh;
+}
 .ballina-col{
     /* width:40%; */
 }
