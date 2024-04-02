@@ -549,7 +549,7 @@ height:5vh;
   }
   .img-container {
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
     padding-right:0;
     padding-left:0;
 }
@@ -705,7 +705,7 @@ footer{
     .navbar{
       position:fixed;
       top:0;
-      /* overflow: hidden; */
+      overflow: hidden;
       /* width: 100%; */
       font-weight: 500;
       background-color:#93977500;
