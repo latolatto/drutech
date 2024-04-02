@@ -786,7 +786,8 @@ footer{
       }
     .carousel-img{
         height:100vh;
-        margin-left: -50%;
+        width:230%;
+        /* margin-left: -50%; */
             
 }
 .carousel-inner{
