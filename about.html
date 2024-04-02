@@ -16,6 +16,7 @@
     <style>
       .front-img{
         height:70vh;
+        width:auto;
         /* width:100%; */
       }
 
@@ -70,9 +71,6 @@ h1 {
   justify-content: center;
   border-radius: 50%;
   transform: translateY(-50%);
-}
-.slider-wrapper .slide-button:hover {
-  /* background: #404040; */
 }
 .slider-wrapper .slide-button#prev-slide {
   left: -1rem;
@@ -158,6 +156,18 @@ h1 {
     width: 20%;
   }
 }
+
+.future-div{
+  display:flex;
+  width:100%;
+  justify-content: center;
+  gap:1.5rem;
+}
+
+.future-div img{
+  height:4.5rem;
+  width:4.5rem;
+}
 </style>
   </head>
   <body>
@@ -209,8 +219,8 @@ h1 {
               <h1 class="  lh-1 text-body-emphasis">Welcome to Dru Tech: <br> Where Woodcraft meets Artistry</h1>
               <!-- <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p> -->
             </div>
-            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                <img class="front-img rounded-lg-3" src="./assets/other-pages/aboutuswallpaper.jpg" alt="">
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden ">
+                <img class="front-img rounded-lg-3 " src="./assets/other-pages/aboutuswallpaper.jpg" alt="">
             </div>
           </div>
         </div>
@@ -298,7 +308,21 @@ h1 {
           <h3 class="about-title card-title">WHAT'S NEXT FOR DRUTECH?</h3>
           <p class="seksioni2-p  text-muted">
             As pioneers in woodworking excellence, we at Dru Tech are constantly looking towards the horizon. Currently, we're in the process of constructing a massive warehouse, a testament to our commitment to expansion and innovation. Our sights are set on reaching new international markets, building upon existing partnerships, and connecting with customers across borders. Furthermore, we are dedicated to staying at the forefront of technology and carving trends, ensuring that our craftsmanship remains unparalleled. The future holds endless possibilities for us, and we're excited to continue pushing the boundaries of woodworking mastery.
-        </div>
+            <div class="future-div">
+              <div class="p-3 bg-body-secondary d-inline-flex align-items-center justify-content-center flex-shrink-0 me-3" style="border-radius: 50%;">
+                <img src="./assets/other-pages/warehouse.png">
+              </div>
+              <div class="p-3 bg-body-secondary d-inline-flex align-items-center justify-content-center flex-shrink-0 me-3" style="border-radius: 50%;">
+                <img src="./assets/other-pages/machine.png">
+              </div>
+              <div class="p-3 bg-body-secondary d-inline-flex align-items-center justify-content-center flex-shrink-0 me-3" style="border-radius: 50%;">
+                <img src="./assets/other-pages/international.png">
+              </div>
+              <!-- <img src="./assets/other-pages/warehouse.png">
+              <img src="./assets/other-pages/machine.png">
+              <img src="./assets/other-pages/international.png"> -->
+            </div>
+          </div>
         <div  class="container grid3 ">
         <footer class="  d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="position:relative; ">
          <div class="footer-div col-md-4 d-flex align-items-center">

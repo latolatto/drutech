@@ -72,6 +72,39 @@ span.FARAL {
         transform: translateX(-50%);
     }
 }
+
+.get-in-touch{
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  gap:1rem;
+  justify-content: center;
+  align-items: center;
+  padding-bottom:1%;
+}
+
+.get-in-touch h4{
+  font-weight:550;
+align-self: center;
+
+}
+.get-in-touch p{
+  padding:0;
+  margin:0;
+}
+
+.send-email-img{
+  height:2rem;
+  /* padding:5%; */
+}
+
+.send-email{
+  /* background-color: #E5DDC5; */
+  padding:1%;
+  color:#503C3C;
+}
+
+
     </style>
   </head>
   <body>
@@ -306,7 +339,14 @@ span.FARAL {
             </div>
               <span class="album-see-more"> <button  class=" btn-seemore btn  btn-sm btn-outline-secondary "  type="button">See more</button></span>
         </div>
-        
+
+        <div class="get-in-touch my-5 pt-3 bg-body-tertiary">
+          <h4>Want to get in touch ? </h4>
+          <p>Carve out some time to craft us an email <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 13.5a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 0-1H3.707L13.854 2.854a.5.5 0 0 0-.708-.708L3 12.293V7.5a.5.5 0 0 0-1 0z"/>
+          </svg></p>
+          <a class="send-email " href = "mailto: toshi.lazime@gmail.com" target="_blank" ><img class=" send-email-img" src="./assets/send-email.png" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Send email"></a>
+        </div> 
       </div>
       
       <div  class="container grid3 ">

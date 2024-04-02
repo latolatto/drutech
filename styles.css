@@ -62,7 +62,7 @@ div.container-fluid.justify-content-md-center{
     display: flex;
     flex-direction: row;
     gap:3.5rem ;
-    font-size:1rem;
+    font-size:0.9rem;
     font-weight:600;
 
 }
@@ -239,9 +239,8 @@ height:5vh;
     /* border-color: #503C3C  ; */
     /* border-color: rgba(255, 255, 255, 0.692) !important  ; */
     background-color:rgba(255, 255, 255, 0.692) !important;
-    color:#503C3C !important;
+    color:#503C3C ;
     font-weight:600;
-    color:#000000A6;
     border-radius:25px;
     font-family: "Montserrat", sans-serif;
     margin-top: 2%;
@@ -250,6 +249,7 @@ height:5vh;
 }
 .mainbutton:hover{
   background-color: white !important;
+  color:#503C3C ;
 }
 
   .grid{
@@ -504,7 +504,8 @@ height:5vh;
   border:0;
   outline: 0;
   font-weight:600;
-  color:#000000A6;
+  /* color:#000000A6; */
+  color:#503c3ce2 ;
   border-radius:25px;
   font-size:1rem;
   display:flex;
@@ -765,7 +766,7 @@ footer{
     } */
 
 .email{
-  display:none;
+  /* display:none; */
 }
     .overlay { 
         top:28%;
