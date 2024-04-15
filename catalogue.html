@@ -18,6 +18,10 @@
    pointer-events: none;
    cursor: default;
 }
+
+.clicked {
+        border: 2px solid black;
+    }
     </style>
   </head>
   <body>
@@ -507,6 +511,22 @@ document.getElementById('cartDropdownMenu').addEventListener('click', function(e
 
 
 
+// Get all buttons with class 'myButton'
+var buttons = document.querySelectorAll('.btn');
+
+// Loop through each button and add a click event listener
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Add the 'clicked' class to the button
+        this.classList.add('clicked');
+
+        // Remove the 'clicked' class after 100 milliseconds (adjust as needed)
+        var that = this;
+        setTimeout(function() {
+            that.classList.remove('clicked');
+        }, 100);
+    });
+});
 </script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->

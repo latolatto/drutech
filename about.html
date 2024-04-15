@@ -14,6 +14,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="./styles.css" rel="stylesheet">
     <style>
+          .clicked {
+        border: 2px solid black;
+    }
       .front-img{
         height:70vh;
         width:auto;
@@ -220,7 +223,7 @@ h1 {
               <!-- <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p> -->
             </div>
             <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden ">
-                <img class="front-img rounded-lg-3 " src="./assets/other-pages/aboutuswallpaper.jpg" alt="">
+                <img class="front-img img-fluid rounded-lg-1 shadow" src="./assets/other-pages/aboutuswall.jpg" alt="">
             </div>
           </div>
         </div>
@@ -286,6 +289,7 @@ h1 {
                 <img class="image-item" src="./assets/other-pages/team3.jpg" alt="img-3" />
                 <img class="image-item" src="./assets/other-pages/team4.jpg" alt="img-4" />
                 <img class="image-item" src="./assets/other-pages/team5.jpg" alt="img-5" />
+                <img class="image-item" src="./assets/other-pages/team6.jpg" alt="img-6" />
                 <!-- <img class="image-item" src="images/img-6.jpg" alt="img-6" />
                 <img class="image-item" src="images/img-7.jpg" alt="img-7" />
                 <img class="image-item" src="images/img-8.jpg" alt="img-8" />
@@ -307,7 +311,7 @@ h1 {
         <div class="  text-center  p-5">
           <h3 class="about-title card-title">WHAT'S NEXT FOR DRUTECH?</h3>
           <p class="seksioni2-p  text-muted">
-            As pioneers in woodworking excellence, we at Dru Tech are constantly looking towards the horizon. Currently, we're in the process of constructing a massive warehouse, a testament to our commitment to expansion and innovation. Our sights are set on reaching new international markets, building upon existing partnerships, and connecting with customers across borders. Furthermore, we are dedicated to staying at the forefront of technology and carving trends, ensuring that our craftsmanship remains unparalleled. The future holds endless possibilities for us, and we're excited to continue pushing the boundaries of woodworking mastery.
+            As pioneers in woodworking excellence, we at Dru Tech are constantly looking towards the horizon. Currently, we're in the process of constructing a<i> massive warehouse</i>, a testament to our commitment to expansion and innovation. Our sights are set on <i>reaching new international markets</i>, building upon existing partnerships, and connecting with customers across borders. Furthermore, we are dedicated to staying at the forefront of <i>technology and carving trends</i>, ensuring that our craftsmanship remains unparalleled. The future holds endless possibilities for us, and we're excited to continue pushing the boundaries of woodworking mastery.
             <div class="future-div">
               <div class="p-3 bg-body-secondary d-inline-flex align-items-center justify-content-center flex-shrink-0 me-3" style="border-radius: 50%;">
                 <img src="./assets/other-pages/warehouse.png">
@@ -557,6 +561,22 @@ document.getElementById('cartDropdownMenu').addEventListener('click', function(e
         updateCartDropdown();
 
 
+// Get all buttons with class 'myButton'
+var buttons = document.querySelectorAll('.btn');
+
+// Loop through each button and add a click event listener
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Add the 'clicked' class to the button
+        this.classList.add('clicked');
+
+        // Remove the 'clicked' class after 100 milliseconds (adjust as needed)
+        var that = this;
+        setTimeout(function() {
+            that.classList.remove('clicked');
+        }, 100);
+    });
+});
 
 
 

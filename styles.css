@@ -3,6 +3,11 @@ body{
     font-family: "Montserrat", sans-serif;
 }
 
+.clicked {
+  border: 2px solid black;
+}
+
+
 .grid-container{
     /* display:grid;
     grid-template-rows: 5fr 10fr 1fr; */
@@ -240,7 +245,7 @@ height:5vh;
     /* border-color: rgba(255, 255, 255, 0.692) !important  ; */
     background-color:rgba(255, 255, 255, 0.692) !important;
     color:#503C3C ;
-    font-weight:600;
+    font-weight:550;
     border-radius:25px;
     font-family: "Montserrat", sans-serif;
     margin-top: 2%;

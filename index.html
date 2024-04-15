@@ -18,6 +18,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
     <style>
+
+.clicked {
+        border: 2px solid black;
+    }
       .scroll {
     position: relative;
     width: 100%;
@@ -724,6 +728,24 @@ document.getElementById('cartDropdownMenu').addEventListener('click', function(e
         // Display initial cart items with delete buttons
         updateCartDropdown();
 
+
+        
+// Get all buttons with class 'myButton'
+var buttons = document.querySelectorAll('.btn');
+
+// Loop through each button and add a click event listener
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Add the 'clicked' class to the button
+        this.classList.add('clicked');
+
+        // Remove the 'clicked' class after 100 milliseconds (adjust as needed)
+        var that = this;
+        setTimeout(function() {
+            that.classList.remove('clicked');
+        }, 100);
+    });
+});
 
 </script>
 <!-- <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>

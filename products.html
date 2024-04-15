@@ -14,34 +14,86 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="./styles.css" rel="stylesheet">
     <style>
-.gallery {
-    max-width: 1200px;
-    margin: 0 auto; 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 20px; 
-    justify-items: center; 
+            .clicked {
+        border: 2px solid black;
+    }
+
+    section .row{
+        background-image: url("./assets/other-pages/our-work/OURWORK.png");
+        background-repeat:repeat-x;
+    }
+    h1{
+   /* padding-top:2%; */
+    font-family: "Alegreya SC", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size:2rem;
+    /* display:flex;
+    width:100%;
+    justify-content: center; */
 }
 
+.karuseli{
+    width:50%;
+    justify-self: center;
+}
+
+.karuseli h4{
+    /* text-align: center; */
+} 
+
+.carousel{
+    width:100%;
+}
+
+ .carousel-inner img{
+    height:60vh;
+    /* width:10rem; */
+ }
+
+.card-title{
+  font-weight: 650;
+}
+
+
+
+.gallery {
+	display: grid;
+    grid-template-columns: repeat(3 ,minmax(10rem, 1fr)); 
+    gap: 0.5rem; 
+    justify-items: center; 
+    align-items: center;
+	/* Compensate for excess margin on outer gallery flex items */
+}
 .image-container {
     position: relative;
     text-align: center; 
 }
 
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	/* flex: 1 0 24rem; */
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	/* box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4); */
+	overflow: hidden;
+    justify-self: center;
 }
 
-.card-title{
-  font-weight: 650;
+.gallery-image {
+	/* display: block; */
+	width: 70%;
+	height: fit-content;
+	object-fit: cover;
+	transition: transform 400ms ease-out;
 }
 .image-description {
     background-color: rgba(0, 0, 0, 0.5); 
     color: white;
     text-align: center;
-    width: 100%;
+    width: 70%;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -50,26 +102,16 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    justify-self: center;
+    font-size:0.9rem;
 }
+/*
 
-/* Adjustments for various screen sizes */
-@media screen and (max-width: 1200px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
+The following rule will only run if your browser supports CSS grid.
 
-@media screen and (max-width: 800px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    }
-}
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
 
-@media screen and (max-width: 600px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    }
-}
+*/
 
 
     </style>
@@ -118,60 +160,119 @@
         </div>
         </div>
       <div class="seksioni-2 container">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        <div class="gallery">
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=1" alt="Image 1">
-              <div class="image-description">Beautiful sunset</div>
+        <section class="py-5 mb-2 text-center container">
+            <div class="row py-lg-5">
+              <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-dark pb-5">WORK INSIGHT</h1>
+                <p class="lead text-body-secondary">Here you can find detailed information and the behind-the-scenes of the woodworking process and craftsmanship.</p>
+                <p>
+                  <a href="./catalogue.html" class="btn btn-warning my-2">Our catalogue</a>
+                  <a href="./contact.html" class="btn btn-outline-secondary my-2">Contact Page</a>
+                </p>
+              </div>
+            </div>
+          </section>
+          <div class="  pt-5 pb-5 mb-5 card">
+            <div class="card-body">
+              <h4 class="pb-3 fw-semibold">WHAT DO WE DO?</h4>
+              <p class="card-text">Our team of artisans specializes in crafting wooden furniture and accents that reflect our dedication to quality and attention to detail. From sturdy and comfortable <i>chairs</i> designed for everyday use to decorative <i>table legs</i> that add character to any dining space, we offer a range of pieces to suit various needs and styles. Our <i>frames</i> are meticulously crafted to showcase and protect your cherished photographs and artwork. Additionally, our expertly constructed <i>stairs</i> provide both functionality and aesthetic appeal, serving as a beautiful focal point in any home or establishment. Each item is carefully made with precision and care, ensuring that our customers receive only the finest craftsmanship.</p>
+            </div>
+          <div class="karuseli pt-5 pb-3">
+            <h5 class="pb-2 text-center fs-5">Browse through some of our products</h5>
+            <div id="carouselExampleCaptions"  class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/other-pages/our-work/1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h6>Chairs</h6>
+                      <!-- <p>Some representative placeholder content for the first slide.</p> -->
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/other-pages/our-work/2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h6>Table legs</h6>
+                      <!-- <p>Some representative placeholder content for the second slide.</p> -->
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/other-pages/our-work/3.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h6>Frames</h6>
+                      <!-- <p>Some representative placeholder content for the third slide.</p> -->
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/other-pages/our-work/4.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h6>Stairs</h6>
+                      <!-- <p>Some representative placeholder content for the third slide.</p> -->
+                    </div>
+                  </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            </div>
+              </div>
+              <div class="card-body mt-5">
+                <h4 class="pb-3 fw-semibold">HOW DO WE DO IT?</h4>
+                <p class="card-text">Our products stand out for their exceptional quality and craftsmanship. We offer customization options to ensure your furniture reflects your unique style and preferences. Each piece is carefully crafted from high-quality, sustainably sourced wood, guaranteeing both durability and elegance. Elevate your living space with our custom-designed furniture, tailored to your exact specifications. Experience the luxury of furniture made with attention to detail and the finest materials, adding warmth and character to your home. Our products quality is impeccable,given the </p>
+              </div>
           </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=2" alt="Image 2">
-              <div class="image-description">Snowy mountains</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=3" alt="Image 3">
-              <div class="image-description">City lights</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=4" alt="Image 4">
-              <div class="image-description">Nature</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=5" alt="Image 5">
-              <div class="image-description">Beach view</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=6" alt="Image 6">
-              <div class="image-description">Autumn leaves</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=7" alt="Image 7">
-              <div class="image-description">Mountain lake</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=8" alt="Image 8">
-              <div class="image-description">Sunrise</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=9" alt="Image 9">
-              <div class="image-description">Forest</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=10" alt="Image 10">
-              <div class="image-description">City skyline</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=11" alt="Image 11">
-              <div class="image-description">Autumn forest</div>
-          </div>
-          <div class="image-container">
-              <img src="https://picsum.photos/400/400?random=12" alt="Image 12">
-              <div class="image-description">Mountain view</div>
-          </div>
-      </div>   
+          <div class="container bg-body-tertiary rounded-3 py-5" >
+            <h3 class="pb-3 fw-semibold   text-center pt-2">PRODUCTION PROCESS</h3>
+            <div class="gallery">
+        
+                <div class="gallery-item image-container">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&h=500&fit=crop" alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer">
+                    <div class="image-description">Sketch/Prototype Sculpturing</div>
+                </div>
+        
+                <div class="gallery-item image-container">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1515260268569-9271009adfdb?w=500&h=500&fit=crop" alt="sunset behind San Francisco city skyline">
+                    <div class="image-description">Preparation for processing</div>
+
+                </div>
+        
+                <div class="gallery-item image-container">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1506045412240-22980140a405?w=500&h=500&fit=crop" alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan">
+                    <div class="image-description">Cutting</div>
+
+                </div>
+        
+                <div class="gallery-item image-container">
+                    <img class="gallery-image" src="./assets/other-pages/our-work/process/4.jpg">
+                    <div class="image-description">Carving</div>
+
+                </div>
+        
+                <div class="gallery-item image-container">
+                    <img class="gallery-image" src="./assets/other-pages/our-work/process/5.jpg">
+                    <div class="image-description">Sanding</div>
+
+                </div>
+        
+                <div class="gallery-item image-container">
+                    <img class="gallery-image" src="https://images.unsplash.com/photo-1486334803289-1623f249dd1e?w=500&h=500&fit=crop" alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
+                    <div class="image-description">Colouring</div>
+
+                </div>
+        
+            </div>
+        
+        </div>
       </div>
       <div  class="container grid3 ">
         <footer class="  d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="position:relative; ">
@@ -406,6 +507,22 @@ document.getElementById('cartDropdownMenu').addEventListener('click', function(e
         // Display initial cart items with delete buttons
         updateCartDropdown();
 
+// Get all buttons with class 'myButton'
+var buttons = document.querySelectorAll('.btn');
+
+// Loop through each button and add a click event listener
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        // Add the 'clicked' class to the button
+        this.classList.add('clicked');
+
+        // Remove the 'clicked' class after 100 milliseconds (adjust as needed)
+        var that = this;
+        setTimeout(function() {
+            that.classList.remove('clicked');
+        }, 100);
+    });
+});
 
   </script>
 
