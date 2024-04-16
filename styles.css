@@ -476,7 +476,7 @@ height:5vh;
 .album-see-more{
     color:#473C38;
     /* text-align:right !important; */
-    padding-left:1.35%;
+    /* padding-left:1.35%; */
     font-weight: 700;
     display:flex;
     justify-content: center;
