@@ -697,7 +697,8 @@ footer{
     justify-content: space-between; */
     /* width:100%; */
     display:grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:1rem;
   }
 
     .nav-logo {
@@ -717,7 +718,6 @@ footer{
       background-color:#93977500;
       /* order: -1;
       z-index: 9; */
-      padding-top:4.5%;
       grid-column: 1/2;
 
 
@@ -749,11 +749,14 @@ footer{
         justify-content: flex-start;
         align-items:flex-start;
         gap:0.2rem;
-        width:70%;
+        width:100%;
+        padding-top: 1rem;
         height:100vh;
         background-color: rgba(255, 255, 255, 0.571);
         font-size: 0.8rem;
         font-weight: 600;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 
   /* .d-md-block {
@@ -944,7 +947,8 @@ footer{
     justify-content: space-between; */
     /* width:100%; */
     display:grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:1rem;
   }
 
     .nav-logo {
@@ -964,7 +968,7 @@ footer{
       background-color:#93977500;
       /* order: -1;
       z-index: 9; */
-      padding-top:4.5%;
+      /* padding-top:4.5%; */
       grid-column: 1/2;
 
 
@@ -996,11 +1000,14 @@ footer{
         justify-content: flex-start;
         align-items:flex-start;
         gap:0.2rem;
-        width:70%;
+        width:100%;
+        padding-top: 1rem;
         height:100vh;
         background-color: rgba(255, 255, 255, 0.571);
         font-size: 0.8rem;
         font-weight: 600;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 
   /* .d-md-block {
@@ -1189,8 +1196,8 @@ footer{
     justify-content: space-between; */
     /* width:100%; */
     display:grid;
-    grid-template-columns: 1fr 2fr 1fr;
-  }
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:1rem;  }
 
     .nav-logo {
       /* display: flex;
@@ -1209,7 +1216,7 @@ footer{
       background-color:#93977500;
       /* order: -1;
       z-index: 9; */
-      padding-top:4.5%;
+      /* padding-top:4.5%; */
       grid-column: 1/2;
 
 
@@ -1241,11 +1248,14 @@ footer{
         justify-content: flex-start;
         align-items:flex-start;
         gap:0.2rem;
-        width:70%;
+        width:100%;
+        padding-top: 1rem;
         height:100vh;
         background-color: rgba(255, 255, 255, 0.571);
         font-size: 0.8rem;
         font-weight: 600;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 
   /* .d-md-block {
