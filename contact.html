@@ -424,6 +424,8 @@ function updateCartDropdown() {
     
     if (cart.length === 0) {
         cartDropdownMenu.innerHTML = `<div class="empty-cart">Your cart is empty !!</div>`;
+        const emptycarthr= document.getElementById('dropdown-divider');
+        emptycarthr.remove();
         // Disable links for "View Cart" and "Proceed to Checkout"
         document.getElementById('viewCartLink').classList.add('disabled');
         document.getElementById('checkoutLink').classList.add('disabled');

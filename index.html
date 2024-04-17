@@ -175,7 +175,7 @@ align-self: center;
           </a>
           <div class="dropdown-menu" aria-labelledby="cartIcon">
             <div  id="cartDropdownMenu"></div>
-            <hr class="dropdown-divider">
+            <hr id="dropdown-divider" class="dropdown-divider">
              <a id='viewCartLink'class="dropdown-item" href="cart.html">View Cart</a>
              <a id='checkoutLink'class="dropdown-item" href="checkout.html">Proceed to Checkout</a>
         </div>
@@ -678,11 +678,11 @@ function getCartItemsWithDeleteButtons(cart) {
     // Construct HTML with grouped item details and delete buttons
     groupedCart.forEach((item, index) => {
         itemsHTML += `<div class="dropdown-item item-container" data-index="${index}">
-            <img class="cart-img" src="${item.image}" alt="${item.title}">
-            <div class="item-details">
+            <img class="cart-img container-item" src="${item.image}" alt="${item.title}">
+            <div class="item-details container-item">
                 <div class="item-title">${item.title}<span class="item-quantity"> x ${item.quantity}<span></div>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#8b0000" class="delete-icon bi bi-trash" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="#8b0000" class=" container-item delete-icon bi bi-trash" viewBox="0 0 16 16">
                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
                 <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
             </svg>
@@ -715,7 +715,9 @@ function updateCartDropdown() {
     
     if (cart.length === 0) {
         cartDropdownMenu.innerHTML = `<div class="empty-cart">Your cart is empty !!</div>`;
-        // Disable links for "View Cart" and "Proceed to Checkout"
+        const emptycarthr= document.getElementById('dropdown-divider');
+        emptycarthr.remove();
+                // Disable links for "View Cart" and "Proceed to Checkout"
         document.getElementById('viewCartLink').classList.add('disabled');
         document.getElementById('checkoutLink').classList.add('disabled');
     } else {
