@@ -168,6 +168,7 @@ div.container-fluid.justify-content-md-center{
   display: flex;
   align-items: center;
   margin-bottom: 3%;
+  padding-right:0;
 }
 .item-details {
   flex: 1;
@@ -182,6 +183,7 @@ div.container-fluid.justify-content-md-center{
 }
 .delete-icon {
   cursor: pointer;
+  width: 30%;
 }
 .cart-img{
 height:5vh;
