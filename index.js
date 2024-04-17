@@ -1,6 +1,6 @@
-$(document).ready(function(){
-  $(this).scrollTop(0);
-});
+window.onload = function() {
+  window.scrollTo(0, 0);
+};
 
 $('.mainbutton').onclick = function () {
   location.href = "./catalogue.html";
