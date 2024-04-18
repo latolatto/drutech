@@ -78,12 +78,6 @@ div.container-fluid.justify-content-md-center{
 }
 
 
-
-.dropdown:hover .dropdown-menu {
-    /* display: block;
-    margin-top: 0; remove the gap so it doesn't close */
-}
-
 .navbar-nav li{
     align-self: center;
 }
@@ -132,9 +126,6 @@ div.container-fluid.justify-content-md-center{
 
 }
 
-#cartItemCount{
-  /* right:2rem; */
-}
 .dropdown-toggle::after {
   display: none;
 }
@@ -156,13 +147,7 @@ div.container-fluid.justify-content-md-center{
   height:5vh;
   margin-right: 5%;
 }
-.remove-btn {
-  /* background: none;
-  border: none;
-  cursor: pointer;
-  color: red;
-  margin-left: 5%; */
-}
+
 
 .item-container {
   /* display: flex;
@@ -178,9 +163,7 @@ div.container-fluid.justify-content-md-center{
 
 }
 
-.container-item{
-/* justify-self: center; */
-}
+
 .item-details {
   flex: 1;
   margin-left: 2%;
@@ -219,15 +202,8 @@ justify-self: center;
 .item-group {
   margin-bottom: 5%;
 }
-.grid2{
-    /* margin-top:10%;
-    padding-top:5%;
-    margin-left:0;
-    margin-right:0;
-    padding-left:0;
-    padding-right:0;
-    margin-bottom:10%; */
-}
+
+
 
 .carousel-img{
     width:100%;
@@ -490,7 +466,9 @@ justify-self: center;
 .btn{
   border-radius:25px;
 }
-
+.pagination{
+  justify-content: end;
+}
 
 .album-see-more{
     color:#473C38;
@@ -544,9 +522,7 @@ justify-self: center;
 .album-row:hover{
     text-decoration-color:black;
 }
-.ballina-col{
-    /* width:100%; */
-}
+
 
 .card{
     justify-content: center;
@@ -764,9 +740,7 @@ footer{
 
   }
 
-  /* .d-md-block {
-    display: block!important;
-    } */
+
 
   .navbar-toggler {
     border: none !important;
@@ -790,9 +764,7 @@ footer{
         padding-right: 0.5rem;
     }
 
-  /* .d-md-block {
-    display: block!important;
-    } */
+
 
 .email{
   display:none;
@@ -840,13 +812,7 @@ footer{
     border-radius:10px; */
 
 }
-.feature-block{
-    /* background-color:#f8f9fa; */
-    /* color:#473C38; */
-    /* text-align: center; */
-    /* padding:5%; */
-    /* width:90%; */
-}
+
 
 .paragrafi-ballina{
     width:100%;
@@ -931,7 +897,7 @@ footer{
 
   .album-img{
     /* width:30%; */
-    height:20vh;
+    height:18vh;
 
   }
 
@@ -942,6 +908,9 @@ footer{
     padding-top: 10% ;
     font-size:1.5rem;
     text-align: center;
+}
+.pagination{
+  justify-content: center;
 }
 
 .right-column {
@@ -1018,9 +987,7 @@ footer{
 
   }
 
-  /* .d-md-block {
-    display: block!important;
-    } */
+
 
   .navbar-toggler {
     border: none !important;
@@ -1043,10 +1010,6 @@ footer{
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
-
-  /* .d-md-block {
-    display: block!important;
-    } */
 
 .email{
   display:none;
@@ -1094,13 +1057,7 @@ footer{
     border-radius:10px; */
 
 }
-.feature-block{
-    /* background-color:#f8f9fa; */
-    /* color:#473C38; */
-    /* text-align: center; */
-    /* padding:5%; */
-    /* width:90%; */
-}
+
 
 .paragrafi-ballina{
     width:100%;
@@ -1197,7 +1154,9 @@ footer{
     font-size:1.5rem;
     text-align: center;
 }
-
+.pagination{
+  justify-content: center;
+}
 .right-column {
   padding-bottom:0;
 }
@@ -1270,9 +1229,6 @@ footer{
 
   }
 
-  /* .d-md-block {
-    display: block!important;
-    } */
 
   .navbar-toggler {
     border: none !important;
@@ -1296,9 +1252,7 @@ footer{
         padding-right: 0.5rem;
     }
 
-  /* .d-md-block {
-    display: block!important;
-    } */
+
 
 .email{
   display:none;
@@ -1346,13 +1300,8 @@ footer{
     border-radius:10px; */
 
 }
-.feature-block{
-    /* background-color:#f8f9fa; */
-    /* color:#473C38; */
-    /* text-align: center; */
-    /* padding:5%; */
-    /* width:90%; */
-}
+
+
 
 .paragrafi-ballina{
     width:100%;
@@ -1519,10 +1468,6 @@ footer{
 
   }
 
-  /* .d-md-block {
-    display: block!important;
-    } */
-
   .navbar-toggler {
     border: none !important;
     outline: none !important;
@@ -1545,9 +1490,6 @@ footer{
         padding-right: 0.5rem;
     }
 
-  /* .d-md-block {
-    display: block!important;
-    } */
 
 .email{
   display:none;
@@ -1578,13 +1520,6 @@ footer{
 }
 
 
-.feature-block{
-    /* background-color:#f8f9fa; */
-    /* color:#473C38; */
-    /* text-align: center; */
-    /* padding:5%; */
-    /* width:90%; */
-}
 
 .paragrafi-ballina{
     width:100%;
@@ -1752,9 +1687,7 @@ footer{
 
   }
 
-  /* .d-md-block {
-    display: block!important;
-    } */
+
 
   .navbar-toggler {
     border: none !important;
@@ -1834,3 +1767,5 @@ footer{
   margin:0;
 }
 }
+
+
