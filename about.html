@@ -185,15 +185,17 @@ h1 {
   }
 }
 @media screen and (max-width:576px ){
-.container, .container-sm {
-    max-width: fit-content;
-}
+
 .aboutus-intro{
-  margin: 2%;
-    width: 25%;
+  /* margin: 2%;
+    width: 25%; */
+    padding:3%;
+}
+.check-work{
+  padding-top:5%;
 }
 .card{
-  width:50%;
+  width:100%;
 }
 .card-group {
     gap: 2rem;
@@ -201,12 +203,12 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
 }
 
 .team-intro{
   margin: 2%;
-    width: 25%;
+    width: 100%;
 
 }
 .about-title{
@@ -215,18 +217,47 @@ h1 {
   gap:0.5rem;
   font-weight:500;
 }
-.about-title span{
-  font-weight: 600;
+.team-p {
+  font-size:medium;
+}
+.about-title h4{
+  margin-top:3%;
+  font-weight: 600 !important;
 }
 .next{
-  margin: 2%;
-    width: 30%;
+  /* margin: 2%; */
+  padding:2%;
+    width: 100%;
 }
 
 .seksioni-2 {
     /* padding-top: 2%; */
     margin-top: 3%;
 }
+.front-img {
+    height: auto;
+    width: auto;
+}
+
+.future-div{
+  gap:1rem;
+
+}
+
+.future-div div{
+  margin-right:0 !important;
+  width: 30%;
+    height: 17vh;
+
+}
+
+.future-div img{
+
+}
+}
+
+@media screen and (max-width:990px){
+
 }
 </style>
   </head>
@@ -270,8 +301,9 @@ h1 {
             <hr id="dropdown-divider" class="dropdown-divider">
             <a id='viewCartLink'class="dropdown-item" href="cart.html">View Cart</a>
             <a id='checkoutLink'class="dropdown-item" href="checkout.html">Proceed to Checkout</a>
+          </div>
         </div>
-        </div>
+      </div>
       <div class="seksioni-2 container">
         <div class="page-top my-3 pb-5 ">
           <div class="row p-4 pb-0 pe-lg-0  align-items-center  ">
@@ -286,9 +318,9 @@ h1 {
         </div>
         <div class="aboutus-intro bg-body-tertiary rounded-3 pt-5 pb-5 ">
           <div class="card-body">
-            <h4 class="about-title card-title" style="font-weight:600;">ABOUT US</h4>
+            <h4 class="about-title  card-title" style="font-weight:600;">ABOUT US</h4>
             <p class="card-text">We're Dru Tech, where woodworking mastery meets innovation. Our dedicated artisans blend tradition with modern flair to create bespoke pieces that redefine craftsmanship. Each creation reflects our unwavering commitment to quality and attention to detail. Join us in discovering the artistry of woodcraft where every piece tells a story of skill, dedication, and creativity.</p>
-            <p class="card-text "><a class="check-cat" href='./products.html'><small class="text-body-secondary">Check Our Work <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+            <p class="card-text check-work"><a class="check-cat" href='./products.html'><small class="text-body-secondary">Check Our Work <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
             </svg></small></p></a>
             <p class="card-text pt-5">Since our establishment in 2019, we have been synonymous with precision craftsmanship, melding age-old traditions with contemporary flair to create bespoke pieces that captivate the senses and elevate the ordinary to extraordinary. With a team of dedicated artisans spanning generations, we breathe life into wood, transforming it into exquisite works of art that bear the hallmark of our passion, creativity, and unwavering commitment to excellence. </p>
@@ -329,7 +361,7 @@ h1 {
         </div>
         <div class="team-intro pt-5 pb-5 container">
           <div class="card-body pb-5">
-            <h4 class="about-title card-title">Meet Our Team : <span> The Heartbeat of Dru Tech</span></h4>
+            <h4 class="about-title team-p card-title">Meet Our Team : <span> <h4>The Heartbeat of Dru Tech</h4></span></h4>
             <p class="card-text">Our diverse team is the cornerstone of our success, comprising 15 to 20 dedicated artisans. Spanning ages from 20 to 60+, each member brings a unique blend of experience and creativity to our craft.  From seasoned veterans with decades of craftsmanship to fresh talents eager to make their mark,  we work hand in hand, pushing boundaries and setting new standards for woodworking artistry.</p>
             <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
           </div>
@@ -365,9 +397,9 @@ h1 {
             </div>
           </div>
         </div>
-        <div class="next  text-center  p-5">
-          <h3 class="about-title card-title" style="font-weight:600;">WHAT'S NEXT FOR DRUTECH?</h3>
-          <p class="seksioni2-p  text-muted">
+        <div class="next  text-center  p-2">
+           <h3 class="about-title card-title" style="font-weight:600;">WHAT'S NEXT FOR DRUTECH?</h3>
+           <p class="seksioni2-p  text-muted">
             As pioneers in woodworking excellence, we at Dru Tech are constantly looking towards the horizon. Currently, we're in the process of constructing a<i> massive warehouse</i>, a testament to our commitment to expansion and innovation. Our sights are set on <i>reaching new international markets</i>, building upon existing partnerships, and connecting with customers across borders. Furthermore, we are dedicated to staying at the forefront of <i>technology and carving trends</i>, ensuring that our craftsmanship remains unparalleled. The future holds endless possibilities for us, and we're excited to continue pushing the boundaries of woodworking mastery.
             <div class="future-div">
               <div class="p-3 bg-body-secondary d-inline-flex align-items-center justify-content-center flex-shrink-0 me-3" style="border-radius: 50%;">
@@ -383,8 +415,9 @@ h1 {
               <img src="./assets/other-pages/machine.png">
               <img src="./assets/other-pages/international.png"> -->
             </div>
-          </div>
-          <div  class="container grid3 ">
+         </div>
+      </div>
+      <div  class="container grid3 ">
             <footer class="  d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="position:relative; ">
              <div class="footer-div col-md-4 d-flex align-items-center">
                <img class="footer-img" src="./assets/logo/DRUTECH LOGO1.svg" alt="logo"></img>
@@ -401,7 +434,7 @@ h1 {
                 </li>
              </ul>
            </footer>
-          </div>
+        </div>
     </div>  
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

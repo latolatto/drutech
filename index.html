@@ -504,14 +504,12 @@ const displayItem = (items) => {
         const card = document.createElement('div');
         card.classList.add('col-6-sm', 'ballina-col');
         card.innerHTML = `
-            <div class="card">
-                <a class="card-text pop" href="#" type="" data-bs-toggle="modal" data-bs-target="#myModal${item.id}" data-item-id="${item.id}">
+                <a class="catg-item card-text pop" href="#" type="" data-bs-toggle="modal" data-bs-target="#myModal${item.id}" data-item-id="${item.id}">
                     <img class="album-img" src="${item.image}" alt="pieces">
-                    <div class="card-body" style="text-decoration: none;color:black;">
+                    <div class="img-ttl card-body" style="text-decoration: none;color:black;">
                         ${item.title}
                     </div>
-                </a>
-            </div>`;
+                </a>`;
         root.appendChild(card);
 
         // Attach event listener to each card

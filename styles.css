@@ -898,9 +898,22 @@ footer{
   .album-img{
     /* width:30%; */
     height:18vh;
+    justify-self: center;
 
   }
 
+  .img-ttl{
+    justify-self: center;
+    text-align: center;
+  }
+  a.catg-item.card-text.pop {
+    display: flex;
+    flex-direction: column;
+    /* display:grid;
+    grid-template-rows:2fr 0.5fr; */
+    justify-content: center;
+    align-items: center;
+}
   .seksioni-2-catalogue{
     padding-top: 10%;
   }
@@ -1143,8 +1156,23 @@ footer{
   .album-img{
     /* width:30%; */
     height:24vh;
+    justify-self: center;
 
   }
+
+  .img-ttl{
+    justify-self: center;
+    text-align: center;
+  }
+  a.catg-item.card-text.pop {
+    display: flex;
+    flex-direction: column;
+    /* display:grid;
+    grid-template-rows:2fr 0.5fr; */
+    justify-content: center;
+    align-items: center;
+}
+
   .seksioni-2-catalogue{
     padding-top: 5%;
   }
@@ -1387,8 +1415,22 @@ footer{
   .album-img{
     /* width:30%; */
     height:24vh;
+    justify-self: center;
 
   }
+
+  .img-ttl{
+    justify-self: center;
+    text-align: center;
+  }
+  a.catg-item.card-text.pop {
+    display: flex;
+    flex-direction: column;
+    /* display:grid;
+    grid-template-rows:2fr 0.5fr; */
+    justify-content: center;
+    align-items: center;
+}
 
   .album-title-ballina{
     padding-top: 10%;
@@ -1396,6 +1438,9 @@ footer{
     text-align: center;
 }
 
+.pagination{
+  justify-content: center;
+}
 .right-column {
   padding-bottom:0;
 }
@@ -1605,15 +1650,31 @@ footer{
   .album-img{
     /* width:30%; */
     height:28vh;
+    justify-self: center;
 
   }
+
+  .img-ttl{
+    justify-self: center;
+    text-align: center;
+  }
+  a.catg-item.card-text.pop {
+    display: flex;
+    flex-direction: column;
+    /* display:grid;
+    grid-template-rows:2fr 0.5fr; */
+    justify-content: center;
+    align-items: center;
+}
 
   .album-title-ballina{
     padding-top: 10%;
     font-size:1.5rem;
     text-align: center;
 }
-
+.pagination{
+  justify-content: center;
+}
 .right-column {
   padding-bottom:0;
 }
@@ -1735,10 +1796,26 @@ footer{
   .album-img{
     /* width:30%; */
     height:28vh;
+    justify-self: center;
 
   }
 
+  .img-ttl{
+    justify-self: center;
+    text-align: center;
+  }
+  a.catg-item.card-text.pop {
+    display: flex;
+    flex-direction: column;
+    /* display:grid;
+    grid-template-rows:2fr 0.5fr; */
+    justify-content: center;
+    align-items: center;
+}
 
+  .pagination{
+    justify-content: center;
+  }
   .grid3{
     width:100%;
     margin-bottom:0;
