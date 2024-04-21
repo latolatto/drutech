@@ -431,7 +431,12 @@ justify-self: center;
     /* margin-top: 10%; */
     /* padding-bottom:10%; */
   }
-
+.ballina-col{
+  display:flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 .album{
     padding-top:2%;
     padding-bottom:2%;
@@ -534,6 +539,7 @@ justify-self: center;
   .album-img{
     /* width:30%; */
     height:35vh;
+    align-self: center;
 
   }
 
@@ -542,6 +548,7 @@ justify-self: center;
     color:black;
     /* color:#000000; */
     text-decoration: none;
+    align-self: center;
   }
 
   a.card-text.pop{
