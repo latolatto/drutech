@@ -1852,4 +1852,11 @@ footer{
 }
 }
 
+@media screen and (max-width: 576px){
 
+.browse-catg{
+  padding-bottom:5%;
+  margin-bottom:5%;
+}
+
+}
