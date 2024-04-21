@@ -56,19 +56,14 @@
   justify-content: space-between;
   width:100%;
 }
-.forma{
-    padding-bottom: 0;
-    margin-bottom: 0;
-    justify-self: center;
-    width: 60%;
-}
+
 
 .contact-form{
     /* background-color: #D0D4CA; */
     color:black;
     align-items: center;
     padding:30px;
-    width: 70%;
+    width: 50%;
     padding-top: 15px;
     padding-bottom: 10px;
     margin:30px;
@@ -102,18 +97,51 @@
   justify-content: flex-start;
   /* text-align:start; */
 }
-@media(min-width: 280px) and (max-width: 700px){
+@media screen and (max-width: 767px){
 
-.forma{
+.form-flex{
         display: flex;
-        width:90%;
-        justify-self: center;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        margin-left:5%;
+        width:100%;
+        gap:4rem;
     }
 
+.contact-form{
+  width:90%;
+  align-self: center;
+}
+
+.vr{
+  display: none;
+}
   }
+
+  @media screen and (max-width: 576px){
+
+    .contact-header{
+        margin-top:5%;
+        padding-top:10%;
+
+
+      }
+  }
+
+  @media screen and (min-width:577px) and (max-width: 767px){
+
+.contact-header{
+    margin-top:5%;
+    padding-top:5%;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+  .contact-header{
+    margin-top:5%;
+    padding-top:3%;
+  }
+}
 
     </style>
   </head>
@@ -157,7 +185,7 @@
             <hr id="dropdown-divider" class="dropdown-divider">
             <a id='viewCartLink'class="dropdown-item" href="cart.html">View Cart</a>
             <a id='checkoutLink'class="dropdown-item" href="checkout.html">Proceed to Checkout</a>
-        </div>
+          </div>
         </div>
       </div>
       <div class=" contact-header shadow">
@@ -165,7 +193,6 @@
       </div>
       <div class="seksioni-2-cont container  ">
         <div class="form-flex">
-          <div class="forma ">
             <!--form-->
             <form class="contact-form bg-body-tertiary" method="POST" action="https://api.web3forms.com/submit" id="form">
               <input type="hidden" name="access_key" value="ebe59053-0f8d-457f-8f05-d9c7b5b2b02a">
@@ -195,7 +222,6 @@
               <br>
               <button class="submit-button btn  btn-sm btn-warning" type="submit" >Send</button>
              </form>
-           </div>
            <div class="vr"></div>
            <div class="contact-details">
             <span>
