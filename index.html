@@ -673,6 +673,11 @@ document.addEventListener('DOMContentLoaded', function() {
   updateCartIcon();
 });
 
+// Listen for the window focus event
+window.addEventListener('focus', function() {
+  // Refresh the cart data here
+  updateCartIcon();
+});
 
 // Function to get cart items with delete buttons
 function getCartItemsWithDeleteButtons(cart) {
@@ -762,6 +767,9 @@ buttons.forEach(function(button) {
         }, 100);
     });
 });
+
+
+
 </script>
 <!-- HoverSignal -->
 <script type="text/javascript" >

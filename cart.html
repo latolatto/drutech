@@ -477,6 +477,12 @@ buttons.forEach(function(button) {
     });
 });
 
+// Listen for the window focus event
+window.addEventListener('focus', function() {
+  // Refresh the cart data here
+  updateCartIcon();
+});
+
   </script>
 <!-- HoverSignal -->
 <script type="text/javascript" >
