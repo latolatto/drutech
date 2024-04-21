@@ -1866,4 +1866,14 @@ footer{
   width: 1.65rem;
   justify-self: center;
 }
+
+
 }
+
+@media only screen and (max-width: 767px){
+#magnifier{
+  display:none !important;
+}
+  
+  
+  }
