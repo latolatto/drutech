@@ -1860,3 +1860,10 @@ footer{
 }
 
 }
+
+@media screen and (max-width: 767px){
+.delete-icon {
+  width: 1.65rem;
+  justify-self: center;
+}
+}
