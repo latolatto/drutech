@@ -49,7 +49,7 @@
     /* display: grid;
     grid-template-columns: 1fr 1fr 0.5fr 0.5fr; */
     display: grid;
-    grid-template-columns: 2fr 4fr 1fr 1.5fr;
+    grid-template-columns: 1.5fr 4fr 1fr 1.5fr;
     gap:2rem;
     width:100%;
     align-items: center;
@@ -71,7 +71,7 @@
 }
 
 .cart-item img {
-    width:40%;
+    width:60%;
     /* height: 20vh; */
 }
 
@@ -173,10 +173,10 @@ h1{
 }
 
 .cart-item {
-    display:flex;
+    /* display:flex; */
     width:100%;
     align-items: center;
-    gap: 4rem;
+    gap: 2rem;
     justify-self: center;
         }
     }
@@ -184,7 +184,9 @@ h1{
 
     @media screen and (max-width: 500px){
 .cart-item {
-    gap: 0.1rem;
+    gap: 0.5rem;
+    padding:0;
+
         }
 
 
@@ -333,6 +335,7 @@ function populateCartItems() {
 
         // Quantity input
         const quantityInput = document.createElement('input');
+        quantityInput.setAttribute('id', 'quantity-input');
         quantityInput.type = 'number';
         quantityInput.value = item.totalQuantity;
         quantityInput.min = 1;

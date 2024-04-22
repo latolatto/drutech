@@ -389,6 +389,35 @@ align-self: center;
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
      <script>
 
+$(window).on('scroll', function(e) {
+  // if ($(window).scrollTop() >= ($(".counter").offset().top - ($(window).height()))) {
+  if ($(window).scrollTop() >= ($(".counter").offset().top - ($(window).height()))) {
+    if (!$(".counter").hasClass("animated")) {
+      $('.counter-count').each(function () {
+        var $this = $(this);
+        $this.prop('Counter', 0).animate({
+          Counter: $this.text()
+        }, {
+          duration: 3500,
+          easing: 'swing',
+          step: function (now) {
+            $this.text(Math.ceil(now));
+          },
+          complete: function () {
+            if ($this.hasClass('add-plus') && Math.ceil($this.prop('Counter')) >= parseInt($this.text())) {
+              $this.text($this.text() + '+');
+            }
+          }
+        });
+      });
+      $(".counter").addClass("animated");
+    }
+  }
+  console.log("Window Scroll Top:", $(window).scrollTop());
+console.log("Counter Offset Top:", $(".counter").offset().top);
+
+});
+
       $('.dropdown-toggle').dropdown();
 
 function shopnow() {
@@ -555,15 +584,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Add an event listener to the cart icon to toggle the dropdown menu on click
 const cartIcon = document.getElementById('cartIcon');
-const dropdownMenu = document.getElementById('cartDropdown');
 
-cartIcon.addEventListener('click', function() {
-    if (dropdownMenu.classList.contains('show')) {
-        dropdownMenu.classList.remove('show');
-    } else {
-        dropdownMenu.classList.add('show');
-    }
-}); 
+
 // Function to handle the "Add to Cart" button click
 function addToCartClicked(event) {
     // Identify the product
