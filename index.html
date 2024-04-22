@@ -764,7 +764,15 @@ buttons.forEach(function(button) {
     });
 });
 
-
+// Add an event listener for the 'pageshow' event
+window.addEventListener('pageshow', function(event) {
+    // Check if the event's persisted property is false (indicating a fresh load or reload)
+    if (!event.persisted) {
+        // Update cart content
+        updateCartDropdown();
+        updateCartIcon();
+    }
+});
 
 </script>
 <!-- HoverSignal -->
