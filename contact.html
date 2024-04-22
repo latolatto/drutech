@@ -556,21 +556,41 @@ buttons.forEach(function(button) {
     });
 });
 
-// Listen for the window focus event
-window.addEventListener('load', function() {
-  // Refresh the cart data here
-  updateCartIcon();
-});
+// // Listen for the window focus event
+// window.addEventListener('load', function() {
+//   // Refresh the cart data here
+//   updateCartIcon();
+// });
 
-// Add an event listener for the 'pageshow' event
-window.addEventListener('pageshow', function(event) {
-    // Check if the event's persisted property is false (indicating a fresh load or reload)
-    if (!event.persisted) {
-        // Update cart content
-        updateCartDropdown();
-        updateCartIcon();
+// // Add an event listener for the 'pageshow' event
+// window.addEventListener('pageshow', function(event) {
+//     // Check if the event's persisted property is false (indicating a fresh load or reload)
+//     if (!event.persisted) {
+//         // Update cart content
+//         updateCartDropdown();
+//         updateCartIcon();
+//     }
+// });
+
+// Add event listener for the 'popstate' event
+window.addEventListener('popstate', function(event) {
+    // Check if the state change indicates a navigation back to the page where the cart was modified
+    if (event.state && event.state.page === 'cartPage') {
+        // Update the cart based on stored data
+        updateCartFromLocalStorage();
     }
 });
+
+// Function to update the cart from local storage
+function updateCartFromLocalStorage() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        // Update the cart icon or cart display as needed
+        updateCartIcon(); // Assuming this function updates the cart icon
+    }
+}
+
 
   </script>
 <!-- HoverSignal -->
