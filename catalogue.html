@@ -428,6 +428,15 @@ function getTotalItemCount() {
 function saveCartToLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+// Add event listener for changes to local storage
+window.addEventListener('storage', function(event) {
+    if (event.key === 'cart') {
+        // Cart data in local storage has been updated
+        // Update the cart UI based on the updated cart data
+        updateCartIcon();
+        // You can also update other parts of the UI that display cart information
+    }
+});
 
 // Add an event listener for when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', function() {
