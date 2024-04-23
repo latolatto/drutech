@@ -272,7 +272,6 @@
                     </div>
                     <div id="result" style="font-size:0.8rem;font-weight: 700;color:#FF9843;"></div>
                 </form>
-
                 </div>
               </div>
             </main>
@@ -420,6 +419,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Function to handle form submission
+
+const result = document.getElementById('result');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(form);
