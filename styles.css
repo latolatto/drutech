@@ -154,7 +154,7 @@ div.container-fluid.justify-content-md-center{
   flex-wrap:wrap; */
   display:grid;
   grid-template-columns: 1fr 3fr 1fr;
-  gap:1rem;
+  /* gap:1rem; */
   align-items: center;
   margin-bottom: 3%;
   padding-right:3%;
@@ -183,6 +183,7 @@ div.container-fluid.justify-content-md-center{
   cursor: pointer;
   width: 1.45rem;
   justify-self: center;
+  padding:2%;
 }
 .cart-img{
 height:5vh;
@@ -198,7 +199,8 @@ justify-self: center;
 
 .disabled {
   opacity: 0.5; /* Reduce opacity */
-  display:none;}
+  display:none !important;
+}
 .item-group {
   margin-bottom: 5%;
 }

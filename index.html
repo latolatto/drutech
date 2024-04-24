@@ -647,20 +647,30 @@ function addToCart(title, imageSrc, quantity) {
 function removeFromCart(index) {
     // Remove the item from the cart array
     const removedItem = cart.splice(index, 1)[0];
+    console.log("Cart after removing item:", cart); // Log cart after removal
+
 
     // Update cart in local storage
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Update cart icon
-    updateCartIcon();
-
-    // Update cart dropdown menu
-    updateCartDropdown();
 
     // If the item was removed completely, update the product display
     if (removedItem) {
         displayItem(product);
     }
+
+    // Check if the cart is empty
+    if (cart.length === 0) {
+        // If the cart is empty, update the cart dropdown to reflect it
+        updateCartDropdown();
+    } else {
+        // If the cart is not empty, update the cart dropdown with the remaining items
+        updateCartDropdown();
+    }
+
+    // Update cart icon
+    updateCartIcon();
+
+    
 }
 
 
@@ -736,9 +746,9 @@ function getCartItemsWithDeleteButtons(cart) {
         itemsHTML += `<div class="dropdown-item item-container" data-index="${index}">
             <img class="cart-img container-item" src="${item.image}" alt="${item.title}">
             <div class="item-details container-item">
-                <div class="item-title">${item.title}<span class="item-quantity"> x ${item.quantity}<span></div>
+                <div  class="  item-title">${item.title}<span  class="item-quantity "> x ${item.quantity}<span></div>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg"  fill="#8b0000" class=" container-item delete-icon bi bi-trash" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="#8b0000" class=" container-item delete-icon  bi bi-trash" viewBox="0 0 16 16">
                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
                 <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
             </svg>
@@ -764,25 +774,7 @@ function groupCartItems(cart) {
     });
     return groupedCart;
 }
-               // Function to update cart dropdown menu
-function updateCartDropdown() {
-    const cartDropdownMenu = document.getElementById('cartDropdownMenu');
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    if (cart.length === 0) {
-        cartDropdownMenu.innerHTML = `<div class="empty-cart">Your cart is empty !!</div>`;
-        const emptycarthr= document.getElementById('dropdown-divider');
-        emptycarthr.remove();
-                // Disable links for "View Cart" and "Proceed to Checkout"
-        document.getElementById('viewCartLink').classList.add('disabled');
-        document.getElementById('checkoutLink').classList.add('disabled');
-    } else {
-        cartDropdownMenu.innerHTML = getCartItemsWithDeleteButtons(cart);
-        // Enable links for "View Cart" and "Proceed to Checkout"
-        document.getElementById('viewCartLink').classList.remove('disabled');
-        document.getElementById('checkoutLink').classList.remove('disabled');
-    }
-}
+
 
 
 // Add event listener to delete buttons using event delegation
@@ -790,6 +782,7 @@ document.getElementById('cartDropdownMenu').addEventListener('click', function(e
     if (event.target.classList.contains('delete-icon')) {
         const itemIndex = event.target.parentElement.dataset.index;
         removeFromCart(itemIndex); // Call removeFromCart function to remove item from cart
+
     }
 });
 
@@ -844,7 +837,29 @@ function updateCartFromLocalStorage() {
     }
 }
 
+               // Function to update cart dropdown menu
+               function updateCartDropdown() {
+    const cartDropdownMenu = document.getElementById('cartDropdownMenu');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    if (cart.length === 0) {
+        cartDropdownMenu.innerHTML = `<div class="empty-cart">Your cart is empty !!</div>`;
+        const emptycarthr = document.getElementById('dropdown-divider');
+if (emptycarthr) {
+    emptycarthr.remove();
+}
 
+
+                // Disable links for "View Cart" and "Proceed to Checkout"
+        document.getElementById('viewCartLink').classList.add('disabled');
+        document.getElementById('checkoutLink').classList.add('disabled');
+    } else {
+        cartDropdownMenu.innerHTML = getCartItemsWithDeleteButtons(cart);
+        // Enable links for "View Cart" and "Proceed to Checkout"
+        document.getElementById('viewCartLink').classList.remove('disabled');
+        document.getElementById('checkoutLink').classList.remove('disabled');
+    }
+}
 </script>
 <!-- HoverSignal -->
 <script type="text/javascript" >
