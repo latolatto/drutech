@@ -576,6 +576,8 @@ align-items: center;
 }
 
 .right-column{
+  display:flex;
+  flex-direction: column;
   padding-top:3%;
   padding-bottom:5%;
 }
