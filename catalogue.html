@@ -161,9 +161,7 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
    <script>
 
-
-
-
+const audio = new Audio('./assets/addedToCart.mp3');
 
 const container = document.querySelector('.img-container');
 const image = document.querySelector('.imagepreview');
@@ -343,7 +341,6 @@ const cartIcon = document.getElementById('cartIcon');
 
 // Function to handle the "Add to Cart" button click
 function addToCartClicked(event) {
-    const audio = new Audio('./assets/addedToCart.mp3'); // Replace 'path_to_your_sound_file.mp3' with the actual path to your sound file
 // Play the sound
 audio.play();
     // Identify the product
