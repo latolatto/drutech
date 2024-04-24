@@ -404,16 +404,22 @@ function removeFromCart(index) {
     // Update cart in local storage
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Update cart icon
-    updateCartIcon();
-
-    // Update cart dropdown menu
-    updateCartDropdown();
-
-    // If the item was removed completely, update the product display
-    if (removedItem) {
+ // If the item was removed completely, update the product display
+ if (removedItem) {
         displayItem(product);
     }
+
+    // Check if the cart is empty
+    if (cart.length === 0) {
+        // If the cart is empty, update the cart dropdown to reflect it
+        updateCartDropdown();
+    } else {
+        // If the cart is not empty, update the cart dropdown with the remaining items
+        updateCartDropdown();
+    }
+
+    // Update cart icon
+    updateCartIcon();
 }
 
 // Function to update the cart icon
@@ -540,12 +546,7 @@ document.getElementById('cartDropdownMenu').addEventListener('click', function(e
     if (event.target.classList.contains('delete-icon')) {
         const itemIndex = event.target.parentElement.dataset.index;
         removeFromCart(itemIndex); // Call removeFromCart function to remove item from cart
-        cartDropdownMenu.innerHTML = `<div class="empty-cart">Your cart is empty !!</div>`;
-        const emptycarthr= document.getElementById('dropdown-divider');
-        emptycarthr.remove();
-        // Disable links for "View Cart" and "Proceed to Checkout"
-        document.getElementById('viewCartLink').classList.add('disabled');
-        document.getElementById('checkoutLink').classList.add('disabled');
+
     }
 });
 

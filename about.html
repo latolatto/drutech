@@ -314,7 +314,7 @@ h1 {
         <div class="aboutus-intro bg-body-tertiary rounded-3 pt-5 pb-5 ">
           <div class="card-body">
             <h4 class="about-title  card-title" style="font-weight:600;">ABOUT US</h4>
-            <p class="card-text">We're Dru Tech, where woodworking mastery meets innovation. Our dedicated artisans blend tradition with modern flair to create bespoke pieces that redefine craftsmanship. Each creation reflects our unwavering commitment to quality and attention to detail. Join us in discovering the artistry of woodcraft where every piece tells a story of skill, dedication, and creativity.</p>
+            <p class="card-text">We're Dru Tech, where woodworking mastery melds with innovation. Our dedicated artisans blend tradition with modern flair to create bespoke pieces that redefine craftsmanship. Each creation reflects our unwavering commitment to quality and attention to detail. Join us in discovering the artistry of woodcraft where every piece tells a story of skill, dedication, and creativity.</p>
             <p class="card-text check-work"><a class="check-cat" href='./products.html'><small class="text-body-secondary">Check Our Work <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
             </svg></small></p></a>
@@ -576,16 +576,22 @@ function removeFromCart(index) {
     // Update cart in local storage
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Update cart icon
-    updateCartIcon();
-
-    // Update cart dropdown menu
-    updateCartDropdown();
-
-    // If the item was removed completely, update the product display
-    if (removedItem) {
+     // If the item was removed completely, update the product display
+     if (removedItem) {
         displayItem(product);
     }
+
+    // Check if the cart is empty
+    if (cart.length === 0) {
+        // If the cart is empty, update the cart dropdown to reflect it
+        updateCartDropdown();
+    } else {
+        // If the cart is not empty, update the cart dropdown with the remaining items
+        updateCartDropdown();
+    }
+
+    // Update cart icon
+    updateCartIcon();
 }
 
 // Function to update the cart icon

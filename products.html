@@ -445,16 +445,22 @@ function removeFromCart(index) {
     // Update cart in local storage
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Update cart icon
-    updateCartIcon();
-
-    // Update cart dropdown menu
-    updateCartDropdown();
-
-    // If the item was removed completely, update the product display
-    if (removedItem) {
+     // If the item was removed completely, update the product display
+     if (removedItem) {
         displayItem(product);
     }
+
+    // Check if the cart is empty
+    if (cart.length === 0) {
+        // If the cart is empty, update the cart dropdown to reflect it
+        updateCartDropdown();
+    } else {
+        // If the cart is not empty, update the cart dropdown with the remaining items
+        updateCartDropdown();
+    }
+
+    // Update cart icon
+    updateCartIcon();
 }
 
 // Function to update the cart icon
