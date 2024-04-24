@@ -391,6 +391,7 @@ align-self: center;
      <script>
 
 const audio = new Audio('./assets/addedToCart.mp3');
+audio.preload = 'auto';
 
 $(window).on('scroll', function(e) {
   // if ($(window).scrollTop() >= ($(".counter").offset().top - ($(window).height()))) {
@@ -607,6 +608,10 @@ audio.play();
 setTimeout(function() {
     addedToCartMessage.innerHTML = '';
 }, 1000);
+
+ setTimeout(function() {
+        audio.play();
+    }, 200);
 
     // Retrieve quantity
     const quantityInput = productContainer.querySelector('#quantityInput');

@@ -162,6 +162,7 @@
    <script>
 
 const audio = new Audio('./assets/addedToCart.mp3');
+audio.preload = 'auto';
 
 const container = document.querySelector('.img-container');
 const image = document.querySelector('.imagepreview');
@@ -352,7 +353,9 @@ audio.play();
         addedToCartMessage.innerHTML = 'Product was successfully added to cart!';
 
 
-
+        setTimeout(function() {
+        audio.play();
+    }, 200);
 // Hide the message after 1 second
 setTimeout(function() {
     addedToCartMessage.innerHTML = '';
