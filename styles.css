@@ -134,10 +134,10 @@ div.container-fluid.justify-content-md-center{
 
 
 
-.grid1 .dropdown-menu .dropdown-item.active,.grid1 .dropdown-menu .dropdown-item:active {
+ .dropdown-menu .dropdown-item.active, .dropdown-menu .dropdown-item:active {
   /* background-color: #503C3C;
   color:white; */
-  background-color: #FFC107; 
+  background-color: #FFC107 !important; 
   color:black;
 }
 
