@@ -18,26 +18,26 @@ $(".album-see-more").on("click",function(){
 })
 
 
-$(function() {
-  $('.pop').on('click', function() {
-    $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-    $('#imagemodal').modal('show');   
-  });		
-});
+// $(function() {
+//   $('.pop').on('click', function() {
+//     $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+//     $('#imagemodal').modal('show');   
+//   });		
+// });
 
-$('.pop').on('click', function () {
-  // Get the item name from the data attribute
-  var itemName = $(this).data('item-name');
+// $('.pop').on('click', function () {
+//   // Get the item name from the data attribute
+//   var itemName = $(this).data('item-name');
   
-  // Update the modal title with the item name
-  $('#itemName').text(itemName);
+//   // Update the modal title with the item name
+//   $('#itemName').text(itemName);
 
-  // Update the modal image source
-  $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+//   // Update the modal image source
+//   $('.imagepreview').attr('src', $(this).find('img').attr('src'));
 
-  // Show the modal
-  $('#myModal').modal('show');
-});
+//   // Show the modal
+//   $('#myModal').modal('show');
+// });
 
 
 

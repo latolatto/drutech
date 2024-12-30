@@ -68,7 +68,7 @@ div.container-fluid.justify-content-md-center{
     flex-direction: row;
     gap:3.5rem ;
     font-size:0.93rem;
-    font-weight:600;
+    font-weight:700;
 
 }
 
@@ -99,10 +99,10 @@ div.container-fluid.justify-content-md-center{
   text-decoration: none;
 }
 
-.email:hover{
-  color:black;
-  text-decoration: underline;
-  text-decoration-color: black;
+.email a:hover{
+  color:black !important;
+  /* text-decoration: underline; */
+  /* text-decoration-color: black; */
 }
 #cartIcon {
   color: #000000A6; /* Change the color of the cart icon */
@@ -243,11 +243,13 @@ justify-self: center;
     background-color:rgba(255, 255, 255, 0.692) !important;
     color:#503C3C ;
     font-weight:550;
-    border-radius:25px;
     font-family: "Montserrat", sans-serif;
     margin-top: 2%;
     align-self: center;
     /* background-color: #B3A398; */
+    font-size:1.2rem;
+    padding:0.5rem 1rem !important;
+    /* border:0.5px solid black; */
 }
 .mainbutton:hover{
   background-color: white !important;
@@ -474,7 +476,8 @@ align-items: center;
   border-radius:25px;
 }
 .pagination{
-  justify-content: end;
+  margin-top: 2rem;
+  justify-content: center;
 }
 
 .album-see-more{
@@ -654,14 +657,15 @@ footer{
     padding-bottom: 0;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: flex-start;
     width:100%;
 }
 
 .footer-img{
     margin-right:5%;
-    height:10%;
-    width:10%;
+    height:5%;
+    width:5%;
 }
 .support-li{
   margin-left: 5%;
